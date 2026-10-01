@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     Shortcat();
+    this->setWindowTitle("Spic");
 }
 
 MainWindow::~MainWindow()
@@ -17,8 +18,12 @@ MainWindow::~MainWindow()
 }
 void MainWindow::Shortcat()
 {
-    QShortcut *shorcat_menubar = new QShortcut(QKeySequence(shortcats[0]),this);
+    foreach (QString shortcat_txt, shortcats) {
+
+
+    QShortcut *shorcat_menubar = new QShortcut(QKeySequence(shortcat_txt),this);
     connect(shorcat_menubar,&QShortcut::activated,this,[this](){
+        if()
         if(!menubar_hide){
             ui->menubar->hide();
             menubar_hide = true;
@@ -29,11 +34,14 @@ void MainWindow::Shortcat()
             menubar_hide = false;
         }
     });
+    }
 }
 void MainWindow::on_action_triggered()
 {
     QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;png файлы (*.png);;jpeg файлы (*.jpeg)");
     QPixmap picture(file_path);
+    curret_file_open = QFileInfo(file_path);
+    this->setWindowTitle(curret_file_open.fileName());
     ui->picture->setPixmap(picture);
 }
 

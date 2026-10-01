@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QFileInfo>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -24,6 +24,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    bool menubar_hide = false;
+    bool menubar_hide = false;\
+        QFileInfo curret_file_open;
+
 };
 #endif // MAINWINDOW_H
