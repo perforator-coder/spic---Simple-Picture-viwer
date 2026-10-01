@@ -20,6 +20,8 @@ public:
 private slots:
     void Shortcat();
 
+    void on_action_triggered();
+
 private:
     Ui::MainWindow *ui;
     bool menubar_hide = false;

@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QKeySequence>
 #include <QShortcut>
+#include <QFileDialog>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -29,3 +30,10 @@ void MainWindow::Shortcat()
         }
     });
 }
+void MainWindow::on_action_triggered()
+{
+    QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;png файлы (*.png);;jpeg файлы (*.jpeg)");
+    QPixmap picture(file_path);
+    ui->picture->setPixmap(picture);
+}
+
