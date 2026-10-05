@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 #include <QFileInfo>
 #include <QMainWindow>
-
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -17,15 +18,21 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
     QVector<QString> shortcats = {"Ctrl+H"};
+    double size = 100;
 private slots:
     void Shortcat();
 
     void on_action_triggered();
-
+    void resize_pic();
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 private:
     Ui::MainWindow *ui;
     bool menubar_hide = false;\
-        QFileInfo curret_file_open;
+    QFileInfo curret_file_open;
+    QGraphicsScene *pic_conteiner = new QGraphicsScene(this);
+    QGraphicsPixmapItem *file_pic_open = new QGraphicsPixmapItem();
+
 
 };
 #endif // MAINWINDOW_H

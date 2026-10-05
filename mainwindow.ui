@@ -15,10 +15,10 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignHCenter">
-     <widget class="QLabel" name="picture">
-      <property name="text">
-       <string>Здесь будет ваша картинка!</string>
+    <item row="0" column="0">
+     <widget class="QGraphicsView" name="picture">
+      <property name="resizeAnchor">
+       <enum>QGraphicsView::ViewportAnchor::AnchorViewCenter</enum>
       </property>
      </widget>
     </item>
