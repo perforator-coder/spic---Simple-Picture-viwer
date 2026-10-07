@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include <QLabel>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -28,10 +29,12 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 private:
     Ui::MainWindow *ui;
-    bool menubar_hide = false;\
+    bool menubar_hide = false;
+    bool is_animated = false;
     QFileInfo curret_file_open;
     QGraphicsScene *pic_conteiner = new QGraphicsScene(this);
     QGraphicsPixmapItem *file_pic_open = new QGraphicsPixmapItem();
+    QLabel* pic_animated = new QLabel;
 
 
 };
