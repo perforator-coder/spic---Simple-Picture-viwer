@@ -38,6 +38,8 @@
      <string>Файл</string>
     </property>
     <addaction name="action"/>
+    <addaction name="separator"/>
+    <addaction name="action_3"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -56,6 +58,11 @@
   <action name="action">
    <property name="text">
     <string>Открыть файл</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Закрыть</string>
    </property>
   </action>
  </widget>
