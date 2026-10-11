@@ -26,6 +26,8 @@ private slots:
 
     void on_action_3_triggered();
 
+    void on_action_about_triggered();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 private:

@@ -11,6 +11,7 @@ qt_add_executable(spic
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    info_window.h info_window.cpp info_window.ui
 )
 
 qt_add_translations(
@@ -22,6 +23,7 @@ target_link_libraries(spic
     PRIVATE
         Qt::Core
         Qt::Widgets
+        #KF6::IconWidgets
 )
 
 install(TARGETS spic

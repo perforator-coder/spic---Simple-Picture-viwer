@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "info_window.h"
+
 #include <QKeySequence>
 #include <QShortcut>
 #include <QFileDialog>
@@ -7,6 +9,8 @@
 #include <QMovie>
 #include <QLabel>
 #include <QTimer>
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -150,5 +154,13 @@ void MainWindow::on_action_triggered()
 void MainWindow::on_action_3_triggered()
 {
     this->close();
+}
+
+
+void MainWindow::on_action_about_triggered()
+{
+    auto *Info_window = new class Info_window(nullptr);
+
+    Info_window->show();
 }
 

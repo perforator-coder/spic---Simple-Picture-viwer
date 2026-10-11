@@ -1,0 +1,22 @@
+#ifndef INFO_WINDOW_H
+#define INFO_WINDOW_H
+
+#include <QWidget>
+
+namespace Ui {
+class Info_window;
+}
+
+class Info_window : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit Info_window(QWidget *parent = nullptr);
+    ~Info_window();
+
+private:
+    Ui::Info_window *ui;
+};
+
+#endif // INFO_WINDOW_H

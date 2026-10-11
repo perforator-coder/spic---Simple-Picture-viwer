@@ -48,8 +48,9 @@
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
-     <string>О программе</string>
+     <string>Инфо</string>
     </property>
+    <addaction name="action_about"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
@@ -63,6 +64,11 @@
   <action name="action_3">
    <property name="text">
     <string>Закрыть</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>Об приложении</string>
    </property>
   </action>
  </widget>
