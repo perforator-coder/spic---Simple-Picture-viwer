@@ -9,7 +9,7 @@
 #include <QMovie>
 #include <QLabel>
 #include <QTimer>
-
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -34,6 +34,7 @@ void MainWindow::resize_pic()
      if(pic_conteiner && Strach_picture )
     {
         ui->picture->fitInView(pic_conteiner->itemsBoundingRect(),Qt::KeepAspectRatio);
+         ui->action_6->setChecked(false);
     }
     else if(pic_conteiner && Strach_witch_extending)
     {
@@ -41,6 +42,7 @@ void MainWindow::resize_pic()
     }else
     {
         ui->picture->fitInView(pic_conteiner->itemsBoundingRect());
+        ui->action_6->setChecked(true);
     }
 }
 void MainWindow::resizeEvent(QResizeEvent *event)
@@ -82,9 +84,11 @@ void MainWindow::Shortcat()
             {
                 Strach_witch_extending = false;
             }
+            ui->action_6->setChecked(false);
         }else
         {
             Strach_picture= false;
+            ui->action_6->setChecked(true);
         }
         resize_pic();
     });
@@ -107,7 +111,9 @@ void MainWindow::Shortcat()
 
 void MainWindow::on_action_triggered()
 {
-    QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;png файлы (*.png);;jpeg файлы (*.jpeg);;gif файлы (*.gif);;Webp файлы (*.webp)");
+    QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;Все подерживаемые расшириения (*.png *.jpeg *.jpg *.gif *.webp *.kra);;png файлы (*.png);;jpeg файлы (*.jpeg *.jpg);;gif файлы (*.gif);;Webp файлы (*.webp);; Krita Файлы (*.kra)");
+    QFileInfo file(file_path);
+    if(valid_files.contains(file.suffix().toLower())){
     if(file_path.endsWith(".gif")||file_path.endsWith(".webp"))
     {
 
@@ -130,12 +136,15 @@ void MainWindow::on_action_triggered()
 
         file_pic_open = new QGraphicsPixmapItem();
         file_pic_open->setPixmap(QPixmap(file_path));
+        size_open_picture = QPixmap(file_path).size();
         pic_conteiner->addItem(file_pic_open);
 
     }
     else
     {
         animated_pic = new QMovie(file_path);
+
+
         pic_animated = new QLabel;
         pic_animated->setMovie(animated_pic);
         pic_animated->setAttribute(Qt::WA_NoSystemBackground);
@@ -143,11 +152,18 @@ void MainWindow::on_action_triggered()
 
         QTimer::singleShot(0,this,&MainWindow::resize_pic);
         animated_pic->start();
+        animated_pic->jumpToFrame(0);
+        size_open_picture = animated_pic->frameRect().size();
 
     }
     resize_pic();
     curret_file_open = QFileInfo(file_path);
-    this->setWindowTitle(curret_file_open.fileName());
+    this->setWindowTitle(QString("%1 -- %2 X %3").arg(curret_file_open.fileName()).arg(size_open_picture.height()).arg(size_open_picture.width()));
+    }
+    else
+    {
+        QMessageBox::information(nullptr,"Ошибка: файл не подерживается","Текущий файл не подерживается для просмотра");
+    }
 }
 
 
@@ -163,4 +179,27 @@ void MainWindow::on_action_about_triggered()
 
     Info_window->show();
 }
+
+
+void MainWindow::on_action_6_triggered()
+{
+    if(!Strach_picture)
+    {
+        Strach_picture = true;
+        if(Strach_witch_extending)
+        {
+            Strach_witch_extending = false;
+        }
+        ui->action_6->setChecked(false);
+    }else
+    {
+
+        Strach_picture= false;
+        ui->action_6->setChecked(true);
+    }
+    resize_pic();
+}
+
+
+
 

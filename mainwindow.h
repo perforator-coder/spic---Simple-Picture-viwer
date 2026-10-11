@@ -28,6 +28,10 @@ private slots:
 
     void on_action_about_triggered();
 
+    void on_action_6_triggered();
+
+
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 private:
@@ -38,9 +42,11 @@ private:
     bool Strach_witch_extending = false;
     QMovie* animated_pic;
     QFileInfo curret_file_open;
+    QSize size_open_picture;
     QGraphicsScene *pic_conteiner = new QGraphicsScene(this);
     QGraphicsPixmapItem *file_pic_open = new QGraphicsPixmapItem();
     QLabel* pic_animated = new QLabel;
+    QStringList valid_files = {"png" ,"jpeg" ,"jpg" ,"gif" ,"webp", "kra"};
 
 
 

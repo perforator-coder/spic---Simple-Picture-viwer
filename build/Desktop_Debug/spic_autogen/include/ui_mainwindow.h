@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.11.2
+** Created by: Qt User Interface Compiler version 6.12.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -27,12 +27,15 @@ public:
     QAction *action;
     QAction *action_3;
     QAction *action_about;
+    QAction *action_2;
+    QAction *action_6;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QGraphicsView *picture;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
+    QMenu *menu_4;
     QMenu *menu_3;
 
     void setupUi(QMainWindow *MainWindow)
@@ -42,10 +45,21 @@ public:
         MainWindow->resize(800, 600);
         action = new QAction(MainWindow);
         action->setObjectName("action");
+        QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::InsertImage));
+        action->setIcon(icon);
         action_3 = new QAction(MainWindow);
         action_3->setObjectName("action_3");
+        QIcon icon1(QIcon::fromTheme(QIcon::ThemeIcon::ApplicationExit));
+        action_3->setIcon(icon1);
         action_about = new QAction(MainWindow);
         action_about->setObjectName("action_about");
+        QIcon icon2(QIcon::fromTheme(QIcon::ThemeIcon::DialogInformation));
+        action_about->setIcon(icon2);
+        action_2 = new QAction(MainWindow);
+        action_2->setObjectName("action_2");
+        action_6 = new QAction(MainWindow);
+        action_6->setObjectName("action_6");
+        action_6->setCheckable(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -64,6 +78,8 @@ public:
         menu->setObjectName("menu");
         menu_2 = new QMenu(menubar);
         menu_2->setObjectName("menu_2");
+        menu_4 = new QMenu(menu_2);
+        menu_4->setObjectName("menu_4");
         menu_3 = new QMenu(menubar);
         menu_3->setObjectName("menu_3");
         MainWindow->setMenuBar(menubar);
@@ -74,6 +90,10 @@ public:
         menu->addAction(action);
         menu->addSeparator();
         menu->addAction(action_3);
+        menu_2->addAction(action_2);
+        menu_2->addSeparator();
+        menu_2->addAction(menu_4->menuAction());
+        menu_4->addAction(action_6);
         menu_3->addAction(action_about);
 
         retranslateUi(MainWindow);
@@ -87,8 +107,11 @@ public:
         action->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
         action_3->setText(QCoreApplication::translate("MainWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214", nullptr));
         action_about->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\320\270", nullptr));
+        action_2->setText(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213", nullptr));
+        action_6->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\202\321\217\320\263\320\270\320\262\320\260\321\202\321\214 \320\272\320\260\321\200\321\202\320\270\320\275\320\272\321\203", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270", nullptr));
+        menu_4->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\266\320\270\320\274\321\213 \320\277\321\200\320\276\321\201\320\274\320\276\321\202\321\200\320\260", nullptr));
         menu_3->setTitle(QCoreApplication::translate("MainWindow", "\320\230\320\275\321\204\320\276", nullptr));
     } // retranslateUi
 

@@ -4,7 +4,7 @@ project(spic LANGUAGES CXX)
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 
 qt_standard_project_setup()
-
+set(CMAKE_AUTORCC ON)
 qt_add_executable(spic
     WIN32 MACOSX_BUNDLE
     main.cpp
@@ -12,6 +12,8 @@ qt_add_executable(spic
     mainwindow.h
     mainwindow.ui
     info_window.h info_window.cpp info_window.ui
+    rec.qrc
+
 )
 
 qt_add_translations(
@@ -24,6 +26,7 @@ target_link_libraries(spic
         Qt::Core
         Qt::Widgets
         #KF6::IconWidgets
+
 )
 
 install(TARGETS spic
