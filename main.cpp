@@ -6,11 +6,15 @@
 #include <QSysInfo>
 #include <QMessageBox>
 #include <QDebug>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QDir>
+#include <QJsonDocument>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
@@ -25,6 +29,9 @@ int main(int argc, char *argv[])
     // Сохраняем файлы в папку в зависимости от ОС
     const QString using_os = QSysInfo::kernelType();
     qDebug() <<"Current user's kernel --" <<using_os;
+    QString save_place;
+    QDir dir_json;
+
 
     if (using_os == "windows")
     {
@@ -36,7 +43,7 @@ int main(int argc, char *argv[])
     }
     else if (using_os == "linux")
     {
-        const QString save_place = "~/.config/spic/";
+        save_place = QDir::homePath()+"/.config/spic";
 
     }
     else
@@ -49,9 +56,15 @@ int main(int argc, char *argv[])
         QMessageBox::warning(nullptr, "Предупреждение",
                              "Эта ОС не поддерживается.");
     }
+    if(!dir_json.exists(save_place))
+    {
+        dir_json.mkdir(save_place);
+    };
+    MainWindow w(save_place);
 
 
 
     w.show();
+
     return QApplication::exec();
 }

@@ -10,24 +10,116 @@
 #include <QLabel>
 #include <QTimer>
 #include <QMessageBox>
+#include <QJsonDocument>
+#include <QJsonParseError>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QCloseEvent>
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QString patch,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    save_dir = patch;
+    //QMessageBox::information(nullptr, "Реальный путь", save_dir + "/Spic.json"); Я ЧУТЬ СУМА НЕ СОШЕЛ С ЗАГРУЗКОЙ JSON!
+    load_json();
+    //QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
+    set_value();
+
     Shortcat();
     this->setWindowTitle("Spic");
 
     ui->picture->setAlignment(Qt::AlignCenter);
 
     ui->picture->setScene(pic_conteiner);
-
+    //Короче я пытался пофиксить сохранения json неиронка меня по всему коду водила НО ПРОБЛЕМА БЫЛА В ПЕРЕДАЧИ ПУТИ ГДЕ СОХРАНЯЕТСЯ файл
+    //HELP ME
 }
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
+}
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    save_json();
+    event->accept();
+}
+void MainWindow::set_value()
+{
+
+    if(menubar_hide)
+    {
+        ui->menubar->hide();
+    }
+    else
+    {
+        ui->menubar->show();
+    }
+}
+void MainWindow::save_json()
+{
+
+    QJsonObject json_data;
+    QJsonArray array;
+    json_data["hide_menubar"] = menubar_hide;
+    foreach (const QString &shortcat, shortcats) {
+        array.append(shortcat);
+    }
+    json_data["shortcats"] = array;
+    QJsonDocument done_json_file(json_data);
+    QFile json_file(save_dir+"/Spic.json");
+
+    if(json_file.open(QIODevice::WriteOnly))
+    {
+        json_file.write(done_json_file.toJson(QJsonDocument::Indented));
+        json_file.close();
+        //QMessageBox::information(this, "Успех", "Файл успешно перезаписан!");
+    }
+
+}
+void MainWindow::load_json()
+{
+    if(QFile::exists(save_dir+"/Spic.json"))
+    {
+        QJsonDocument data_convertor;
+        QJsonParseError detector_er;
+        QByteArray data;
+        QJsonObject json_obj;
+        QFile json_file(save_dir+"/Spic.json");
+        if(!json_file.open(QIODevice::ReadOnly))
+        {
+            //ошибка если файл не открыт
+
+        }else
+        {
+            data = json_file.readAll();
+            json_file.close();
+
+            data_convertor = QJsonDocument::fromJson(data,&detector_er);
+            if(detector_er.error != QJsonParseError::NoError)
+            {
+                //ошибка если файл битый
+
+            }
+            else
+            {
+                if(data_convertor.isObject())
+                {
+                    json_obj = data_convertor.object();
+                    menubar_hide = json_obj["hide_menubar"].toBool();
+                    shortcats.clear();
+                    QJsonArray array = json_obj["shortcats"].toArray();
+                    foreach (const QJsonValue &i, array) {
+                        shortcats.push_back(i.toString());
+                    }
+                }
+            }
+        }
+    }
 }
 void MainWindow::resize_pic()
 {
@@ -60,12 +152,15 @@ void MainWindow::Shortcat()
         if(!menubar_hide){
             ui->menubar->hide();
             menubar_hide = true;
+
         }
         else
         {
             ui->menubar->show();
             menubar_hide = false;
+
         }
+        QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
     });
     QShortcut *shortcat_open_file = new QShortcut(QKeySequence(shortcats[1]),this);
     connect(shortcat_open_file,&QShortcut::activated,this,[this](){
