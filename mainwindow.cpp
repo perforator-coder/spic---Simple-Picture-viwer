@@ -36,6 +36,8 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     ui->picture->setScene(pic_conteiner);
     ui->picture->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->picture->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->picture->viewport()->installEventFilter(this);
+
     //Короче я пытался пофиксить сохранения json неиронка меня по всему коду водила НО ПРОБЛЕМА БЫЛА В ПЕРЕДАЧИ ПУТИ ГДЕ СОХРАНЯЕТСЯ файл
     //HELP ME
 }
@@ -82,6 +84,25 @@ void MainWindow::save_json()
         //QMessageBox::information(this, "Успех", "Файл успешно перезаписан!");
     }
 
+}
+bool MainWindow::eventFilter(QObject *obj,QEvent *event)
+{
+    if(Strach_witch_extending){
+    if(obj == ui->picture->viewport() && event->type() == QEvent::Wheel)
+    {
+        QWheelEvent *mouse = static_cast<QWheelEvent*>(event);
+        if(mouse->angleDelta().y() > 0)
+        {
+            ui->picture->scale(zoom,zoom);
+        }
+        else
+        {
+            ui->picture->scale(1.0/zoom,1.0/zoom);
+        }
+        return true;
+    }
+    }
+    return QMainWindow::eventFilter(obj,event);
 }
 void MainWindow::load_json()
 {
@@ -321,6 +342,8 @@ void MainWindow::on_action_4_triggered()
             ui->picture->fitInView(pic_conteiner->itemsBoundingRect());
         }
         ui->picture->setDragMode(QGraphicsView::ScrollHandDrag);
+        ui->picture->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+
     }
     else{
         Strach_witch_extending = false;

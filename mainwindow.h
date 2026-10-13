@@ -44,6 +44,7 @@ private slots:
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void closeEvent(QCloseEvent *event) override;
+    bool eventFilter(QObject *obj,QEvent *event) override;
 private:
     Ui::MainWindow *ui;
     bool is_animated = false; 
@@ -55,6 +56,7 @@ private:
     QLabel* pic_animated = new QLabel;
     QStringList valid_files = {"png" ,"jpeg" ,"jpg" ,"gif" ,"webp", "kra"};
     QString save_dir;
+    const double zoom = 1.1;
 
 
 };
