@@ -8,7 +8,7 @@
 
 
 Info_window::Info_window(QWidget *parent)
-    : QWidget(parent)
+    : QDialog(parent)
     , ui(new Ui::Info_window)
 {
     ui->setupUi(this);

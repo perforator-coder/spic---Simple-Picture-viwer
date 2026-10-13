@@ -1,13 +1,13 @@
 #ifndef INFO_WINDOW_H
 #define INFO_WINDOW_H
 
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class Info_window;
 }
 
-class Info_window : public QWidget
+class Info_window : public QDialog
 {
     Q_OBJECT
 

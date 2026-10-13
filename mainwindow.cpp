@@ -34,6 +34,8 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     ui->picture->setAlignment(Qt::AlignCenter);
 
     ui->picture->setScene(pic_conteiner);
+    ui->picture->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->picture->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     //Короче я пытался пофиксить сохранения json неиронка меня по всему коду водила НО ПРОБЛЕМА БЫЛА В ПЕРЕДАЧИ ПУТИ ГДЕ СОХРАНЯЕТСЯ файл
     //HELP ME
 }
@@ -123,18 +125,17 @@ void MainWindow::load_json()
 }
 void MainWindow::resize_pic()
 {
+    if(!Strach_witch_extending){
      if(pic_conteiner && Strach_picture )
     {
         ui->picture->fitInView(pic_conteiner->itemsBoundingRect(),Qt::KeepAspectRatio);
          ui->action_6->setChecked(false);
     }
-    else if(pic_conteiner && Strach_witch_extending)
-    {
-        ui->picture->fitInView(pic_conteiner->itemsBoundingRect(),Qt::KeepAspectRatioByExpanding);
-    }else
+    else
     {
         ui->picture->fitInView(pic_conteiner->itemsBoundingRect());
         ui->action_6->setChecked(true);
+    }
     }
 }
 void MainWindow::resizeEvent(QResizeEvent *event)
@@ -172,6 +173,7 @@ void MainWindow::Shortcat()
     });
     QShortcut *shortcat_modekeepaspect = new QShortcut(QKeySequence(shortcats[3]),this);
     connect(shortcat_modekeepaspect,&QShortcut::activated,this,[this](){
+        if(!Strach_witch_extending){
         if(!Strach_picture)
         {
             Strach_picture = true;
@@ -186,19 +188,28 @@ void MainWindow::Shortcat()
             ui->action_6->setChecked(true);
         }
         resize_pic();
+        }
     });
     QShortcut *shortcat_modebyextending = new QShortcut(QKeySequence(shortcats[4]),this);
     connect(shortcat_modebyextending,&QShortcut::activated,this,[this](){
         if(!Strach_witch_extending)
         {
             Strach_witch_extending = true;
-            if(Strach_picture)
+            ui->action_6->setEnabled(false);
+            ui->action_4->setChecked(true);
+
+            if(ui->action_6->isChecked() == true)
             {
-                Strach_picture = false;
+                ui->action_6->setChecked(false);
+                ui->picture->fitInView(pic_conteiner->itemsBoundingRect());
             }
+            ui->picture->setDragMode(QGraphicsView::ScrollHandDrag);
         }else
         {
             Strach_witch_extending = false;
+            ui->action_4->setChecked(false);
+            ui->action_6->setEnabled(true);
+            ui->picture->setDragMode(QGraphicsView::NoDrag);
         }
         resize_pic();
     });
@@ -270,8 +281,8 @@ void MainWindow::on_action_3_triggered()
 
 void MainWindow::on_action_about_triggered()
 {
-    auto *Info_window = new class Info_window(nullptr);
-
+    auto *Info_window = new class Info_window(this);
+    Info_window->setAttribute(Qt::WA_DeleteOnClose);
     Info_window->show();
 }
 
@@ -297,4 +308,25 @@ void MainWindow::on_action_6_triggered()
 
 
 
+
+
+void MainWindow::on_action_4_triggered()
+{
+    if(!Strach_witch_extending){
+        ui->action_6->setEnabled(false);
+        Strach_witch_extending = true;
+        if(ui->action_6->isChecked() == true)
+        {
+            ui->action_6->setChecked(false);
+            ui->picture->fitInView(pic_conteiner->itemsBoundingRect());
+        }
+        ui->picture->setDragMode(QGraphicsView::ScrollHandDrag);
+    }
+    else{
+        Strach_witch_extending = false;
+       ui->action_6->setEnabled(true);
+        ui->picture->setDragMode(QGraphicsView::NoDrag);
+       resize_pic();
+    }
+}
 

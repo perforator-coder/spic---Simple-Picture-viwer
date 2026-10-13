@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.12.0
+** Created by: Qt User Interface Compiler version 6.11.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,6 +29,7 @@ public:
     QAction *action_about;
     QAction *action_2;
     QAction *action_6;
+    QAction *action_4;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QGraphicsView *picture;
@@ -60,6 +61,11 @@ public:
         action_6 = new QAction(MainWindow);
         action_6->setObjectName("action_6");
         action_6->setCheckable(true);
+        action_4 = new QAction(MainWindow);
+        action_4->setObjectName("action_4");
+        action_4->setCheckable(true);
+        QIcon icon3(QIcon::fromTheme(QIcon::ThemeIcon::SystemLockScreen));
+        action_4->setIcon(icon3);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -93,6 +99,8 @@ public:
         menu_2->addAction(action_2);
         menu_2->addSeparator();
         menu_2->addAction(menu_4->menuAction());
+        menu_4->addAction(action_4);
+        menu_4->addSeparator();
         menu_4->addAction(action_6);
         menu_3->addAction(action_about);
 
@@ -109,6 +117,7 @@ public:
         action_about->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\320\270", nullptr));
         action_2->setText(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213", nullptr));
         action_6->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\202\321\217\320\263\320\270\320\262\320\260\321\202\321\214 \320\272\320\260\321\200\321\202\320\270\320\275\320\272\321\203", nullptr));
+        action_4->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\272\320\273\321\216\321\207\320\270\321\202\321\214 \320\277\320\276\320\264\320\263\320\276\320\275\320\272\321\203 \320\277\320\276\320\264 \320\276\320\272\320\275\320\276", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270", nullptr));
         menu_4->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\266\320\270\320\274\321\213 \320\277\321\200\320\276\321\201\320\274\320\276\321\202\321\200\320\260", nullptr));

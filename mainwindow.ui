@@ -49,6 +49,8 @@
      <property name="title">
       <string>Режимы просмотра</string>
      </property>
+     <addaction name="action_4"/>
+     <addaction name="separator"/>
      <addaction name="action_6"/>
     </widget>
     <addaction name="action_2"/>
@@ -100,6 +102,17 @@
    </property>
    <property name="text">
     <string>Растягивать картинку</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::SystemLockScreen"/>
+   </property>
+   <property name="text">
+    <string>Отключить подгонку под окно</string>
    </property>
   </action>
  </widget>
