@@ -13,7 +13,7 @@ Info_window::Info_window(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Об приложении");
-    QIcon logo(":/icons/icon.svg");
+    QIcon logo(":/icons/icon.webp");
     QPixmap pic = logo.pixmap(64,64);
     ui->label->setPixmap(pic);
 }

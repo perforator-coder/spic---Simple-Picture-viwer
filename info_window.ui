@@ -35,7 +35,7 @@
    <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignHCenter">
     <widget class="QLabel" name="label">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>pic</string>

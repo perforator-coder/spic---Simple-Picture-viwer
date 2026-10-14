@@ -43,7 +43,7 @@ public:
         gridLayout->setObjectName("gridLayout");
         label = new QLabel(Info_window);
         label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        label->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(label, 0, 0, 1, 1, Qt::AlignmentFlag::AlignHCenter);
 

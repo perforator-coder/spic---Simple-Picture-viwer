@@ -27,7 +27,7 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     load_json();
     //QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
     set_value();
-
+    this->setWindowIcon(QIcon(":/icons/icon.webp"));
     Shortcat();
     this->setWindowTitle("Spic");
 
@@ -182,7 +182,7 @@ void MainWindow::Shortcat()
             menubar_hide = false;
 
         }
-        QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
+        //QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
     });
     QShortcut *shortcat_open_file = new QShortcut(QKeySequence(shortcats[1]),this);
     connect(shortcat_open_file,&QShortcut::activated,this,[this](){
