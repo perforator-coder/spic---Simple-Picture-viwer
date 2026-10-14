@@ -3,5 +3,13 @@
         <file>icons/icon.svg</file>
         <file>icons/icon_old.jpg</file>
         <file>icons/icon.webp</file>
+        <file>icons/folder.svg</file>
+        <file>icons/exit.webp</file>
+        <file>icons/exit.svg</file>
+        <file>icons/folder.webp</file>
+        <file>icons/info_icon.svg</file>
+        <file>icons/info_icon.webp</file>
+        <file>icons/viwer.svg</file>
+        <file>icons/viwer.webp</file>
     </qresource>
 </RCC>

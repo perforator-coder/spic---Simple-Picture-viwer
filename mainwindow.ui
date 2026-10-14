@@ -39,6 +39,8 @@
     </property>
     <addaction name="action"/>
     <addaction name="separator"/>
+    <addaction name="action_5"/>
+    <addaction name="separator"/>
     <addaction name="action_3"/>
    </widget>
    <widget class="QMenu" name="menu_2">
@@ -48,6 +50,10 @@
     <widget class="QMenu" name="menu_4">
      <property name="title">
       <string>Режимы просмотра</string>
+     </property>
+     <property name="icon">
+      <iconset resource="rec.qrc">
+       <normaloff>:/icons/viwer.webp</normaloff>:/icons/viwer.webp</iconset>
      </property>
      <addaction name="action_4"/>
      <addaction name="separator"/>
@@ -69,7 +75,8 @@
   </widget>
   <action name="action">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::InsertImage"/>
+    <iconset resource="rec.qrc">
+     <normaloff>:/icons/folder.webp</normaloff>:/icons/folder.webp</iconset>
    </property>
    <property name="text">
     <string>Открыть файл</string>
@@ -77,7 +84,8 @@
   </action>
   <action name="action_3">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::ApplicationExit"/>
+    <iconset resource="rec.qrc">
+     <normaloff>:/icons/exit.webp</normaloff>:/icons/exit.webp</iconset>
    </property>
    <property name="text">
     <string>Закрыть</string>
@@ -85,7 +93,8 @@
   </action>
   <action name="action_about">
    <property name="icon">
-    <iconset theme="QIcon::ThemeIcon::DialogInformation"/>
+    <iconset resource="rec.qrc">
+     <normaloff>:/icons/info_icon.webp</normaloff>:/icons/info_icon.webp</iconset>
    </property>
    <property name="text">
     <string>Об приложении</string>
@@ -115,7 +124,18 @@
     <string>Отключить подгонку под окно</string>
    </property>
   </action>
+  <action name="action_5">
+   <property name="icon">
+    <iconset resource="rec.qrc">
+     <normaloff>:/icons/info_icon.webp</normaloff>:/icons/info_icon.webp</iconset>
+   </property>
+   <property name="text">
+    <string>Об файле</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="rec.qrc"/>
+ </resources>
  <connections/>
 </ui>

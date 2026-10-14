@@ -22,7 +22,7 @@ public:
     bool menubar_hide = false;
     bool Strach_picture = false;
     bool Strach_witch_extending = false;
-
+    bool open_file = false;
 private slots:
     void Shortcat();
     void on_action_triggered();
@@ -40,6 +40,8 @@ private slots:
 
 
     void on_action_4_triggered();
+
+    void on_action_5_triggered();
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

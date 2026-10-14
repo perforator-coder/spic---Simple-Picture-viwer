@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "info_window.h"
+#include "file_info.h"
 
 #include <QKeySequence>
 #include <QShortcut>
@@ -37,7 +38,10 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     ui->picture->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->picture->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->picture->viewport()->installEventFilter(this);
-
+    if(!open_file)
+    {
+        ui->action_5 ->setEnabled(false);
+    }
     //Короче я пытался пофиксить сохранения json неиронка меня по всему коду водила НО ПРОБЛЕМА БЫЛА В ПЕРЕДАЧИ ПУТИ ГДЕ СОХРАНЯЕТСЯ файл
     //HELP ME
 }
@@ -239,6 +243,11 @@ void MainWindow::Shortcat()
 void MainWindow::on_action_triggered()
 {
     QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;Все подерживаемые расшириения (*.png *.jpeg *.jpg *.gif *.webp *.kra);;png файлы (*.png);;jpeg файлы (*.jpeg *.jpg);;gif файлы (*.gif);;Webp файлы (*.webp);; Krita Файлы (*.kra)");
+    if(file_path == nullptr)
+    {
+        open_file = false;
+        return;
+    }
     QFileInfo file(file_path);
     if(valid_files.contains(file.suffix().toLower())){
     if(file_path.endsWith(".gif")||file_path.endsWith(".webp"))
@@ -286,10 +295,20 @@ void MainWindow::on_action_triggered()
     resize_pic();
     curret_file_open = QFileInfo(file_path);
     this->setWindowTitle(QString("%1 -- %2 X %3").arg(curret_file_open.fileName()).arg(size_open_picture.height()).arg(size_open_picture.width()));
+    open_file = true;
     }
     else
     {
         QMessageBox::information(nullptr,"Ошибка: файл не подерживается","Текущий файл не подерживается для просмотра");
+        open_file = false;
+    }
+    if(open_file)
+    {
+        ui->action_5->setEnabled(open_file);
+    }
+    else
+    {
+        ui->action_5->setEnabled(open_file);
     }
 }
 
@@ -347,9 +366,16 @@ void MainWindow::on_action_4_triggered()
     }
     else{
         Strach_witch_extending = false;
-       ui->action_6->setEnabled(true);
+        ui->action_6->setEnabled(true);
         ui->picture->setDragMode(QGraphicsView::NoDrag);
        resize_pic();
     }
+}
+
+
+void MainWindow::on_action_5_triggered()
+{
+    File_info *file_form = new File_info(&curret_file_open,this);
+    file_form->show();
 }
 

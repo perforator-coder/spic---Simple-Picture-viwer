@@ -13,6 +13,7 @@ qt_add_executable(spic
     mainwindow.ui
     info_window.h info_window.cpp info_window.ui
     rec.qrc
+    file_info.h file_info.cpp file_info.ui
 
 )
 

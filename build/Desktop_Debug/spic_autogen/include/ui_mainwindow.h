@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
@@ -30,6 +31,7 @@ public:
     QAction *action_2;
     QAction *action_6;
     QAction *action_4;
+    QAction *action_5;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QGraphicsView *picture;
@@ -46,15 +48,18 @@ public:
         MainWindow->resize(800, 600);
         action = new QAction(MainWindow);
         action->setObjectName("action");
-        QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::InsertImage));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/folder.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         action->setIcon(icon);
         action_3 = new QAction(MainWindow);
         action_3->setObjectName("action_3");
-        QIcon icon1(QIcon::fromTheme(QIcon::ThemeIcon::ApplicationExit));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/icons/exit.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         action_3->setIcon(icon1);
         action_about = new QAction(MainWindow);
         action_about->setObjectName("action_about");
-        QIcon icon2(QIcon::fromTheme(QIcon::ThemeIcon::DialogInformation));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/info_icon.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         action_about->setIcon(icon2);
         action_2 = new QAction(MainWindow);
         action_2->setObjectName("action_2");
@@ -66,6 +71,9 @@ public:
         action_4->setCheckable(true);
         QIcon icon3(QIcon::fromTheme(QIcon::ThemeIcon::SystemLockScreen));
         action_4->setIcon(icon3);
+        action_5 = new QAction(MainWindow);
+        action_5->setObjectName("action_5");
+        action_5->setIcon(icon2);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -86,6 +94,9 @@ public:
         menu_2->setObjectName("menu_2");
         menu_4 = new QMenu(menu_2);
         menu_4->setObjectName("menu_4");
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/icons/viwer.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        menu_4->setIcon(icon4);
         menu_3 = new QMenu(menubar);
         menu_3->setObjectName("menu_3");
         MainWindow->setMenuBar(menubar);
@@ -94,6 +105,8 @@ public:
         menubar->addAction(menu_2->menuAction());
         menubar->addAction(menu_3->menuAction());
         menu->addAction(action);
+        menu->addSeparator();
+        menu->addAction(action_5);
         menu->addSeparator();
         menu->addAction(action_3);
         menu_2->addAction(action_2);
@@ -118,6 +131,7 @@ public:
         action_2->setText(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213", nullptr));
         action_6->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\202\321\217\320\263\320\270\320\262\320\260\321\202\321\214 \320\272\320\260\321\200\321\202\320\270\320\275\320\272\321\203", nullptr));
         action_4->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\272\320\273\321\216\321\207\320\270\321\202\321\214 \320\277\320\276\320\264\320\263\320\276\320\275\320\272\321\203 \320\277\320\276\320\264 \320\276\320\272\320\275\320\276", nullptr));
+        action_5->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \321\204\320\260\320\271\320\273\320\265", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270", nullptr));
         menu_4->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\266\320\270\320\274\321\213 \320\277\321\200\320\276\321\201\320\274\320\276\321\202\321\200\320\260", nullptr));

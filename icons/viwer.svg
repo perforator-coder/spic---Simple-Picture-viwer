@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="512" height="512" version="1.1" viewBox="0 0 135.47 135.47" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="pattern2" x="27" y="6" patternTransform="matrix(3 -5.1962 5.1962 3 0 0)" preserveAspectRatio="xMidYMid" xlink:href="#TableCloth"/>
+  <pattern id="TableCloth" width="50" height="50" fill="none" patternUnits="userSpaceOnUse" preserveAspectRatio="xMidYMid">
+   <rect width="50" height="50" fill="none"/>
+   <path d="m0.5 25.5v22l2 2h22v-19l-5-5z" fill="#afecda"/>
+   <path d="m30.5 25.5-5 5v19h22l2-2v-22z" fill="#a8cbfe"/>
+   <path d="m25.5 0.5v19l5 5h19v-22l-2-2z" fill="#cbbbe9"/>
+   <path d="m2.5 0.5-2 2v22h19l5-5v-19z" fill="#f0b6d3"/>
+   <path d="m17.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm2.5 0c0-4.155-3.345-7.5-7.5-7.5h-12v15h12c4.155 0 7.5-3.345 7.5-7.5z" fill="#ffe9a6"/>
+   <path d="m42.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-5-7.5c-4.155 0-7.5 3.345-7.5 7.5v12h15v-12c0-4.155-3.345-7.5-7.5-7.5z" fill="#ea95bf"/>
+   <path d="m12.5 7.5c2.77 0 5 2.23 5 5s-2.23 5-5 5-5-2.23-5-5 2.23-5 5-5zm0 12.5c4.155 0 7.5-3.345 7.5-7.5v-12h-15v12c0 4.155 3.345 7.5 7.5 7.5z" fill="#81b4fe"/>
+   <path d="m42.5 12.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-12.5 0c0 4.155 3.345 7.5 7.5 7.5h12v-15h-12c-4.155 0-7.5 3.345-7.5 7.5z" fill="#8be3c9"/>
+   <path d="m25.5 30.5h5v-5z" fill="#81b4fe"/>
+   <path d="m24.5 30.5h-5v-5z" fill="#67dab8"/>
+   <path d="m24.5 19.5h-5v5z" fill="#ea95bf"/>
+   <path d="m25.5 19.5h5v5z" fill="#b49ddf"/>
+   <path d="m49.5 47.5h-2v2z" fill="#81b4fe"/>
+   <path d="m0.5 47.5h2v2z" fill="#67dab8"/>
+   <path d="m0.5 2.5h2v-2z" fill="#ea95bf"/>
+   <path d="m49.5 2.5h-2v-2z" fill="#b49ddf"/>
+  </pattern>
+  <radialGradient id="radialGradient22" cx="68.699" cy="68.821" r="64.989" gradientTransform="matrix(1 0 0 .61114 0 26.762)" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+   <stop stop-opacity=".81956" offset="0"/>
+   <stop stop-opacity=".42933" offset="1"/>
+  </radialGradient>
+ </defs>
+ <g fill="url(#pattern2)" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="3.5146">
+  <circle cx="67.733" cy="67.733" r="67.349" style="paint-order:stroke fill markers"/>
+  <path d="m67.733 0.38396a67.349 67.349 0 0 0-67.349 67.349 67.349 67.349 0 0 0 67.349 67.349 67.349 67.349 0 0 0 67.349-67.349 67.349 67.349 0 0 0-67.349-67.349z" style="paint-order:stroke fill markers"/>
+ </g>
+ <path d="m68.699 30.914a63.178 37.907 0 0 0-63.178 37.907 63.178 37.907 0 0 0 63.178 37.907 63.178 37.907 0 0 0 63.179-37.907 63.178 37.907 0 0 0-63.179-37.907zm-0.96532 11.057a12.881 25.762 0 0 1 12.881 25.762 12.881 25.762 0 0 1-12.881 25.762 12.881 25.762 0 0 1-12.881-25.762 12.881 25.762 0 0 1 12.881-25.762z" stroke="url(#radialGradient22)" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="3.6206" style="paint-order:stroke fill markers"/>
+</svg>

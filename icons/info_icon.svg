@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="512" height="512" version="1.1" viewBox="0 0 135.47 135.47" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="pattern2" patternTransform="matrix(4.8022 -4.8022 4.8022 4.8022 -18.183 -59.579)" preserveAspectRatio="xMidYMid" xlink:href="#TableCloth"/>
+  <pattern id="TableCloth" width="50" height="50" fill="none" patternUnits="userSpaceOnUse" preserveAspectRatio="xMidYMid">
+   <rect width="50" height="50" fill="none"/>
+   <path d="m0.5 25.5v22l2 2h22v-19l-5-5z" fill="#afecda"/>
+   <path d="m30.5 25.5-5 5v19h22l2-2v-22z" fill="#a8cbfe"/>
+   <path d="m25.5 0.5v19l5 5h19v-22l-2-2z" fill="#cbbbe9"/>
+   <path d="m2.5 0.5-2 2v22h19l5-5v-19z" fill="#f0b6d3"/>
+   <path d="m17.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm2.5 0c0-4.155-3.345-7.5-7.5-7.5h-12v15h12c4.155 0 7.5-3.345 7.5-7.5z" fill="#ffe9a6"/>
+   <path d="m42.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-5-7.5c-4.155 0-7.5 3.345-7.5 7.5v12h15v-12c0-4.155-3.345-7.5-7.5-7.5z" fill="#ea95bf"/>
+   <path d="m12.5 7.5c2.77 0 5 2.23 5 5s-2.23 5-5 5-5-2.23-5-5 2.23-5 5-5zm0 12.5c4.155 0 7.5-3.345 7.5-7.5v-12h-15v12c0 4.155 3.345 7.5 7.5 7.5z" fill="#81b4fe"/>
+   <path d="m42.5 12.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-12.5 0c0 4.155 3.345 7.5 7.5 7.5h12v-15h-12c-4.155 0-7.5 3.345-7.5 7.5z" fill="#8be3c9"/>
+   <path d="m25.5 30.5h5v-5z" fill="#81b4fe"/>
+   <path d="m24.5 30.5h-5v-5z" fill="#67dab8"/>
+   <path d="m24.5 19.5h-5v5z" fill="#ea95bf"/>
+   <path d="m25.5 19.5h5v5z" fill="#b49ddf"/>
+   <path d="m49.5 47.5h-2v2z" fill="#81b4fe"/>
+   <path d="m0.5 47.5h2v2z" fill="#67dab8"/>
+   <path d="m0.5 2.5h2v-2z" fill="#ea95bf"/>
+   <path d="m49.5 2.5h-2v-2z" fill="#b49ddf"/>
+  </pattern>
+  <radialGradient id="radialGradient51" cx="67.733" cy="67.733" r="16.817" gradientTransform="matrix(1 0 0 2.8653 -2.5431e-7 -126.34)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#cbbbe9" offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <ellipse cx="67.733" cy="67.733" rx="60.402" ry="59.621" fill="url(#pattern2)" stroke-width=".37434" style="paint-order:stroke fill markers"/>
+ <g stroke="url(#radialGradient51)" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="2.9">
+  <path d="m75.861 35.094q-2.667 0-4.445-1.524-1.651-1.651-1.651-4.445 0-3.302 1.905-5.715 2.032-2.413 5.588-2.413 5.842 0 5.842 5.715 0 3.937-2.286 6.223-2.286 2.159-4.953 2.159zm-23.495 79.375 14.478-68.072h11.176l-14.478 68.072z" direction="rtl" style="paint-order:stroke fill markers;text-orientation:upright"/>
+  <path d="m77.258 20.997c-2.3707 0-4.2331 0.80462-5.5878 2.4133-1.27 1.6087-1.9053 3.5136-1.9053 5.7149 0 1.8627 0.5504 3.3445 1.6511 4.4452 1.1853 1.016 2.6672 1.5239 4.4452 1.5239s3.4287-0.71971 4.9527-2.159c1.524-1.524 2.2862-3.5982 2.2862-6.2229 0-3.81-1.9474-5.7154-5.842-5.7154z" direction="rtl" style="paint-order:stroke fill markers;text-orientation:upright"/>
+  <path d="m66.844 46.397-14.478 68.072h11.176l14.478-68.072z" direction="rtl" style="paint-order:stroke fill markers;text-orientation:upright"/>
+ </g>
+</svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="512" height="512" version="1.1" viewBox="0 0 135.47 135.47" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="pattern24" patternTransform="matrix(.86933 -.23294 .23294 .86933 0 0)" preserveAspectRatio="xMidYMid" xlink:href="#pattern23"/>
+  <pattern id="pattern23" width="50" height="50" fill="none" patternUnits="userSpaceOnUse" preserveAspectRatio="xMidYMid">
+   <rect width="50" height="50" fill="none"/>
+   <path d="m0.5 25.5v22l2 2h22v-19l-5-5z" fill="#afecda"/>
+   <path d="m30.5 25.5-5 5v19h22l2-2v-22z" fill="#a8cbfe"/>
+   <path d="m25.5 0.5v19l5 5h19v-22l-2-2z" fill="#cbbbe9"/>
+   <path d="m2.5 0.5-2 2v22h19l5-5v-19z" fill="#f0b6d3"/>
+   <path d="m17.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm2.5 0c0-4.155-3.345-7.5-7.5-7.5h-12v15h12c4.155 0 7.5-3.345 7.5-7.5z" fill="#ffe9a6"/>
+   <path d="m42.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-5-7.5c-4.155 0-7.5 3.345-7.5 7.5v12h15v-12c0-4.155-3.345-7.5-7.5-7.5z" fill="#ea95bf"/>
+   <path d="m12.5 7.5c2.77 0 5 2.23 5 5s-2.23 5-5 5-5-2.23-5-5 2.23-5 5-5zm0 12.5c4.155 0 7.5-3.345 7.5-7.5v-12h-15v12c0 4.155 3.345 7.5 7.5 7.5z" fill="#81b4fe"/>
+   <path d="m42.5 12.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-12.5 0c0 4.155 3.345 7.5 7.5 7.5h12v-15h-12c-4.155 0-7.5 3.345-7.5 7.5z" fill="#8be3c9"/>
+   <path d="m25.5 30.5h5v-5z" fill="#81b4fe"/>
+   <path d="m24.5 30.5h-5v-5z" fill="#67dab8"/>
+   <path d="m24.5 19.5h-5v5z" fill="#ea95bf"/>
+   <path d="m25.5 19.5h5v5z" fill="#b49ddf"/>
+   <path d="m49.5 47.5h-2v2z" fill="#81b4fe"/>
+   <path d="m0.5 47.5h2v2z" fill="#67dab8"/>
+   <path d="m0.5 2.5h2v-2z" fill="#ea95bf"/>
+   <path d="m49.5 2.5h-2v-2z" fill="#b49ddf"/>
+  </pattern>
+  <pattern id="pattern3" patternTransform="matrix(-3 5.1962 -5.1962 -3 0 0)" preserveAspectRatio="xMidYMid" xlink:href="#TableCloth"/>
+  <pattern id="TableCloth" width="50" height="50" fill="none" patternUnits="userSpaceOnUse" preserveAspectRatio="xMidYMid">
+   <rect width="50" height="50" fill="none"/>
+   <path d="m0.5 25.5v22l2 2h22v-19l-5-5z" fill="#afecda"/>
+   <path d="m30.5 25.5-5 5v19h22l2-2v-22z" fill="#a8cbfe"/>
+   <path d="m25.5 0.5v19l5 5h19v-22l-2-2z" fill="#cbbbe9"/>
+   <path d="m2.5 0.5-2 2v22h19l5-5v-19z" fill="#f0b6d3"/>
+   <path d="m17.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm2.5 0c0-4.155-3.345-7.5-7.5-7.5h-12v15h12c4.155 0 7.5-3.345 7.5-7.5z" fill="#ffe9a6"/>
+   <path d="m42.5 37.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-5-7.5c-4.155 0-7.5 3.345-7.5 7.5v12h15v-12c0-4.155-3.345-7.5-7.5-7.5z" fill="#ea95bf"/>
+   <path d="m12.5 7.5c2.77 0 5 2.23 5 5s-2.23 5-5 5-5-2.23-5-5 2.23-5 5-5zm0 12.5c4.155 0 7.5-3.345 7.5-7.5v-12h-15v12c0 4.155 3.345 7.5 7.5 7.5z" fill="#81b4fe"/>
+   <path d="m42.5 12.5c0 2.7614-2.2386 5-5 5-2.7614 0-5-2.2386-5-5 0-2.7614 2.2386-5 5-5 2.7614 0 5 2.2386 5 5zm-12.5 0c0 4.155 3.345 7.5 7.5 7.5h12v-15h-12c-4.155 0-7.5 3.345-7.5 7.5z" fill="#8be3c9"/>
+   <path d="m25.5 30.5h5v-5z" fill="#81b4fe"/>
+   <path d="m24.5 30.5h-5v-5z" fill="#67dab8"/>
+   <path d="m24.5 19.5h-5v5z" fill="#ea95bf"/>
+   <path d="m25.5 19.5h5v5z" fill="#b49ddf"/>
+   <path d="m49.5 47.5h-2v2z" fill="#81b4fe"/>
+   <path d="m0.5 47.5h2v2z" fill="#67dab8"/>
+   <path d="m0.5 2.5h2v-2z" fill="#ea95bf"/>
+   <path d="m49.5 2.5h-2v-2z" fill="#b49ddf"/>
+  </pattern>
+ </defs>
+ <g fill="url(#pattern3)">
+  <ellipse cx="67.733" cy="67.733" rx="63.738" ry="63.738" style="paint-order:stroke fill markers"/>
+  <path d="m67.733 3.9956a63.738 63.738 0 0 0-63.738 63.738 63.738 63.738 0 0 0 63.738 63.738 63.738 63.738 0 0 0 63.738-63.738 63.738 63.738 0 0 0-63.738-63.738z" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="5.7072" style="paint-order:stroke fill markers"/>
+ </g>
+ <rect x="23.421" y="34.742" width="47.753" height="9.1083" style="paint-order:stroke fill markers"/>
+ <rect x="24.797" y="37.055" width="44.165" height="5.98" fill="url(#pattern24)" style="paint-order:stroke fill markers"/>
+ <rect x="23.37" y="40.315" width="88.727" height="54.836" style="paint-order:stroke fill markers"/>
+ <g stroke-linecap="square" stroke-linejoin="bevel">
+  <path d="m23.421 34.742v5.5738h1.3761v-3.2603h44.165v3.2603h2.2123v-5.5738z" stroke-width="2.9696" style="paint-order:stroke fill markers"/>
+  <path d="m24.797 40.315h44.165v-3.2603h-44.165z" fill="url(#pattern24)" stroke-width="2.314" style="paint-order:stroke fill markers"/>
+  <path d="m71.174 40.315v3.5347h-47.753v-3.5347h-0.05168v54.836h88.727v-54.836z" stroke-width="2.2505" style="paint-order:stroke fill markers"/>
+ </g>
+</svg>
