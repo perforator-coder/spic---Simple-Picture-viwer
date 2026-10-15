@@ -13,5 +13,7 @@
         <file>icons/viwer.webp</file>
         <file>icons/settings.webp</file>
         <file>icons/settings.svg</file>
+        <file>icons/full.svg</file>
+        <file>icons/full.webp</file>
     </qresource>
 </RCC>

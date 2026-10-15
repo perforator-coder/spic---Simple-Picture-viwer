@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46667 135.46667"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <pattern
+       xlink:href="#TableCloth"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2"
+       patternTransform="matrix(0,6,-6,0,0,0)"
+       x="7"
+       y="0" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       preserveAspectRatio="xMidYMid"
+       width="50"
+       height="50"
+       id="TableCloth"
+       style="fill:none">
+      <g
+   id="g152475">
+        <rect
+   style="fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   id="rect152346"
+   width="50"
+   height="50"
+   x="0"
+   y="0" />
+
+        <path
+   id="path152348"
+   style="fill:#afecda;fill-opacity:1;stroke:none;stroke-width:0.999995;stroke-dasharray:none"
+   d="m 0.5,25.5 v 22 l 2,2 h 22 v -19 l -5,-5 z" />
+
+        <path
+   id="path152350"
+   style="fill:#a8cbfe;fill-opacity:1;stroke:none;stroke-width:0.999995;stroke-dasharray:none"
+   d="m 30.5,25.5 -5,5 v 19 h 22 l 2,-2 v -22 z" />
+
+        <path
+   id="path152352"
+   style="fill:#cbbbe9;fill-opacity:1;stroke:none;stroke-width:0.999995;stroke-dasharray:none"
+   d="m 25.5,0.5 v 19 l 5,5 h 19 v -22 l -2,-2 z" />
+
+        <path
+   id="path152354"
+   style="fill:#f0b6d3;fill-opacity:1;stroke:none;stroke-width:0.999995;stroke-dasharray:none"
+   d="m 2.5,0.5 -2,2 v 22 h 19 l 5,-5 v -19 z" />
+
+        <path
+   id="path152356"
+   style="fill:#ffe9a6;stroke-width:1"
+   d="m 17.5,37.5 c 0,2.761423 -2.238577,5 -5,5 -2.7614235,0 -5,-2.238577 -5,-5 0,-2.761424 2.2385765,-5 5,-5 2.761423,0 5,2.238576 5,5 z m 2.5,0 C 20,33.345004 16.654996,30 12.5,30 h -12 v 15 h 12 c 4.154996,0 7.5,-3.345004 7.5,-7.5 z" />
+
+        <path
+   id="path152358"
+   style="fill:#ea95bf;stroke-width:1"
+   d="m 42.5,37.5 c 0,2.761423 -2.238577,5 -5,5 -2.761424,0 -5,-2.238577 -5,-5 0,-2.761424 2.238576,-5 5,-5 2.761423,0 5,2.238576 5,5 z M 37.5,30 C 33.345004,30 30,33.345004 30,37.5 v 12 h 15 v -12 C 45,33.345004 41.654996,30 37.5,30 Z" />
+
+        <path
+   id="path152360"
+   style="fill:#81b4fe;stroke-width:1"
+   d="m 12.5,7.5 c 2.77,0 5,2.23 5,5 0,2.77 -2.23,5 -5,5 -2.77,0 -5,-2.23 -5,-5 0,-2.77 2.23,-5 5,-5 z m 0,12.5 C 16.654996,20 20,16.654996 20,12.5 V 0.5 H 5 v 12 c 0,4.154996 3.345004,7.5 7.5,7.5 z" />
+
+        <path
+   id="path152362"
+   style="fill:#8be3c9;stroke-width:1"
+   d="m 42.5,12.5 c 0,2.761423 -2.238577,5 -5,5 -2.761424,0 -5,-2.238577 -5,-5 0,-2.7614235 2.238576,-5 5,-5 2.761423,0 5,2.2385765 5,5 z m -12.5,0 c 0,4.154996 3.345004,7.5 7.5,7.5 h 12 V 5 h -12 C 33.345004,5 30,8.345004 30,12.5 Z" />
+
+        <path
+   style="fill:#81b4fe;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 25.5,30.5 h 5 v -5 z"
+   id="path152364" />
+
+        <path
+   style="fill:#67dab8;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 24.5,30.5 h -5 v -5 z"
+   id="path152366" />
+
+        <path
+   style="fill:#ea95bf;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 24.5,19.5 h -5 v 5 z"
+   id="path152368" />
+
+        <path
+   style="fill:#b49ddf;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 25.5,19.5 h 5 v 5 z"
+   id="path152370" />
+
+        <path
+   style="fill:#81b4fe;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 49.5,47.5 h -2 v 2 z"
+   id="path153287" />
+
+        <path
+   style="fill:#67dab8;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 0.5,47.5 h 2 v 2 z"
+   id="path154015" />
+
+        <path
+   style="fill:#ea95bf;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 0.5,2.5 h 2 v -2 z"
+   id="path154155" />
+
+        <path
+   style="fill:#b49ddf;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none"
+   d="m 49.5,2.5 h -2 v -2 z"
+   id="path154226" />
+
+      </g>
+
+    </pattern>
+  </defs>
+  <g
+     id="layer1">
+    <circle
+       style="fill:url(#pattern2);stroke:none;stroke-width:2.89999;stroke-linecap:square;stroke-linejoin:bevel;paint-order:stroke fill markers"
+       id="path1"
+       cx="67.73333"
+       cy="67.73333"
+       r="66.429367" />
+  </g>
+  <g
+     id="layer2"
+     transform="translate(0.92850633,-1.6921072)">
+    <path
+       style="fill:#000000;stroke:none;stroke-width:4.0861;stroke-linecap:square;stroke-linejoin:bevel;paint-order:stroke fill markers"
+       id="rect2"
+       width="24.841999"
+       height="12.513011"
+       x="21.897766"
+       y="28.522306"
+       d="M 32.11059,28.522306 H 46.739765 V 41.035317 H 21.897766 V 38.73513 A 10.212824,10.212824 135 0 1 32.11059,28.522306 Z"
+       transform="matrix(1.414815,0,0,1.414815,-3.7470895,-10.562459)" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:4.0861;stroke-linecap:square;stroke-linejoin:bevel;paint-order:stroke fill markers"
+       id="rect2-8"
+       width="24.841999"
+       height="12.513011"
+       x="21.897766"
+       y="28.522306"
+       d="M 21.897766,28.522306 H 46.739765 V 41.035317 H 34.410777 A 12.513011,12.513011 45 0 1 21.897766,28.522306 Z"
+       transform="matrix(0.02036255,1.3601344,-1.3601344,0.02036255,82.091498,2.1549358)" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:4.0861;stroke-linecap:square;stroke-linejoin:bevel;paint-order:stroke fill markers"
+       id="rect2-5"
+       width="24.841999"
+       height="12.513011"
+       x="21.897766"
+       y="28.522306"
+       d="M 32.11059,28.522306 H 46.739765 V 41.035317 H 21.897766 V 38.73513 A 10.212824,10.212824 135 0 1 32.11059,28.522306 Z"
+       transform="matrix(-1.414815,0,0,-1.414815,137.35676,149.41334)" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:4.0861;stroke-linecap:square;stroke-linejoin:bevel;paint-order:stroke fill markers"
+       id="rect2-8-9"
+       width="24.841999"
+       height="12.513011"
+       x="21.897766"
+       y="28.522306"
+       d="M 21.897766,28.522306 H 46.739765 V 41.035317 H 34.410777 A 12.513011,12.513011 45 0 1 21.897766,28.522306 Z"
+       transform="matrix(-0.02036255,-1.3601344,1.3601344,-0.02036255,51.518156,136.69594)" />
+  </g>
+</svg>

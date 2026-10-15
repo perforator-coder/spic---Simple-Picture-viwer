@@ -81,7 +81,8 @@ public:
         action_7 = new QAction(MainWindow);
         action_7->setObjectName("action_7");
         action_7->setCheckable(true);
-        QIcon icon5(QIcon::fromTheme(QString::fromUtf8("view-fullscreen")));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/icons/full.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         action_7->setIcon(icon5);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");

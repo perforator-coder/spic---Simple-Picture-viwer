@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(spic LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools )
 
 qt_standard_project_setup()
 set(CMAKE_AUTORCC ON)

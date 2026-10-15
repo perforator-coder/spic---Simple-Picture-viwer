@@ -22,33 +22,26 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     save_dir = patch;
-    //QMessageBox::information(nullptr, "Реальный путь", save_dir + "/Spic.json"); Я ЧУТЬ СУМА НЕ СОШЕЛ С ЗАГРУЗКОЙ JSON!
     load_json();
-    //QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
     set_value();
     this->setWindowIcon(QIcon(":/icons/icon.webp"));
     Shortcat();
     this->setWindowTitle("Spic");
-
     ui->picture->setAlignment(Qt::AlignCenter);
-
     ui->picture->setScene(pic_conteiner);
     ui->picture->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->picture->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->picture->viewport()->installEventFilter(this);
     if(!open_file)
     {
-        ui->action_5 ->setEnabled(false);
+        ui->action_5->setEnabled(false);
     }
-    //Короче я пытался пофиксить сохранения json неиронка меня по всему коду водила НО ПРОБЛЕМА БЫЛА В ПЕРЕДАЧИ ПУТИ ГДЕ СОХРАНЯЕТСЯ файл
-    //HELP ME
+
 }
 
 MainWindow::~MainWindow()
 {
-
     delete ui;
 }
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -67,6 +60,19 @@ void MainWindow::set_value()
     {
         ui->menubar->show();
     }
+    if(fullscreeen)
+    {
+
+        this->showFullScreen();
+
+        ui->action_7->setChecked(fullscreeen);
+    }
+    else
+    {
+        this->showNormal();
+
+        ui->action_7->setChecked(fullscreeen);
+    }
 }
 void MainWindow::save_json()
 {
@@ -78,6 +84,7 @@ void MainWindow::save_json()
         array.append(shortcat);
     }
     json_data["shortcats"] = array;
+    json_data["fullscreen"] = fullscreeen;
     QJsonDocument done_json_file(json_data);
     QFile json_file(save_dir+"/Spic.json");
 
@@ -85,7 +92,7 @@ void MainWindow::save_json()
     {
         json_file.write(done_json_file.toJson(QJsonDocument::Indented));
         json_file.close();
-        //QMessageBox::information(this, "Успех", "Файл успешно перезаписан!");
+
     }
 
 }
@@ -138,6 +145,7 @@ void MainWindow::load_json()
                 {
                     json_obj = data_convertor.object();
                     menubar_hide = json_obj["hide_menubar"].toBool();
+                    fullscreeen = json_obj["fullscreen"].toBool();
                     shortcats.clear();
                     QJsonArray array = json_obj["shortcats"].toArray();
                     foreach (const QJsonValue &i, array) {
@@ -186,7 +194,7 @@ void MainWindow::Shortcat()
             menubar_hide = false;
 
         }
-        //QMessageBox::information(nullptr,"info",QString::number(menubar_hide));
+        resize_pic();
     });
     QShortcut *shortcat_open_file = new QShortcut(QKeySequence(shortcats[1]),this);
     connect(shortcat_open_file,&QShortcut::activated,this,[this](){
