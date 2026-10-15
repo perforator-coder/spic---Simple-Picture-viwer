@@ -32,6 +32,7 @@ public:
     QAction *action_6;
     QAction *action_4;
     QAction *action_5;
+    QAction *action_7;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QGraphicsView *picture;
@@ -77,6 +78,11 @@ public:
         action_5 = new QAction(MainWindow);
         action_5->setObjectName("action_5");
         action_5->setIcon(icon2);
+        action_7 = new QAction(MainWindow);
+        action_7->setObjectName("action_7");
+        action_7->setCheckable(true);
+        QIcon icon5(QIcon::fromTheme(QString::fromUtf8("view-fullscreen")));
+        action_7->setIcon(icon5);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -97,9 +103,9 @@ public:
         menu_2->setObjectName("menu_2");
         menu_4 = new QMenu(menu_2);
         menu_4->setObjectName("menu_4");
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/icons/viwer.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        menu_4->setIcon(icon5);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/icons/viwer.webp"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        menu_4->setIcon(icon6);
         menu_3 = new QMenu(menubar);
         menu_3->setObjectName("menu_3");
         MainWindow->setMenuBar(menubar);
@@ -118,6 +124,7 @@ public:
         menu_4->addAction(action_4);
         menu_4->addSeparator();
         menu_4->addAction(action_6);
+        menu_4->addAction(action_7);
         menu_3->addAction(action_about);
 
         retranslateUi(MainWindow);
@@ -135,6 +142,7 @@ public:
         action_6->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\202\321\217\320\263\320\270\320\262\320\260\321\202\321\214 \320\272\320\260\321\200\321\202\320\270\320\275\320\272\321\203", nullptr));
         action_4->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\272\320\273\321\216\321\207\320\270\321\202\321\214 \320\277\320\276\320\264\320\263\320\276\320\275\320\272\321\203 \320\277\320\276\320\264 \320\276\320\272\320\275\320\276", nullptr));
         action_5->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \321\204\320\260\320\271\320\273\320\265", nullptr));
+        action_7->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260 \320\262\320\265\321\201\321\214 \321\215\320\272\321\200\320\260\320\275", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270", nullptr));
         menu_4->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\266\320\270\320\274\321\213 \320\277\321\200\320\276\321\201\320\274\320\276\321\202\321\200\320\260", nullptr));

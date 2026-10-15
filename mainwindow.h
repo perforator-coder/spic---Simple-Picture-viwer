@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QString patch,QWidget *parent = nullptr);
     ~MainWindow() override;
-    QVector<QString> shortcats = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e","Ctrl+i"};
+    QVector<QString> shortcats = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e","Ctrl+i","F11"};
     bool menubar_hide = false;
     bool Strach_picture = false;
     bool Strach_witch_extending = false;
@@ -43,6 +43,8 @@ private slots:
 
     void on_action_5_triggered();
 
+    void on_action_7_triggered();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void closeEvent(QCloseEvent *event) override;
@@ -59,7 +61,7 @@ private:
     QStringList valid_files = {"png" ,"jpeg" ,"jpg" ,"gif" ,"webp", "kra"};
     QString save_dir;
     const double zoom = 1.1;
-
+    bool fullscreeen = false;
 
 };
 #endif // MAINWINDOW_H

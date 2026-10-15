@@ -58,6 +58,7 @@
      <addaction name="action_4"/>
      <addaction name="separator"/>
      <addaction name="action_6"/>
+     <addaction name="action_7"/>
     </widget>
     <addaction name="action_2"/>
     <addaction name="separator"/>
@@ -135,6 +136,17 @@
    </property>
    <property name="text">
     <string>Об файле</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="view-fullscreen"/>
+   </property>
+   <property name="text">
+    <string>На весь экран</string>
    </property>
   </action>
  </widget>

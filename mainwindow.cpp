@@ -242,6 +242,10 @@ void MainWindow::Shortcat()
     connect(shortcat_info_pic,&QShortcut::activated,this,[this](){
         on_action_5_triggered();
     });
+    QShortcut*shortcat_fillscrin = new QShortcut(QKeySequence(shortcats[6]),this);
+    connect(shortcat_fillscrin,&QShortcut::activated,this,[this](){
+        on_action_7_triggered();
+    });
 }
 
 void MainWindow::on_action_triggered()
@@ -254,7 +258,7 @@ void MainWindow::on_action_triggered()
     }
     QFileInfo file(file_path);
     if(valid_files.contains(file.suffix().toLower())){
-    if(file_path.endsWith(".gif")||file_path.endsWith(".webp"))
+        if(file_path.endsWith(".gif")||file_path.endsWith(".webp"))
     {
 
         is_animated = true;
@@ -382,6 +386,24 @@ void MainWindow::on_action_5_triggered()
     if(open_file){
     File_info *file_form = new File_info(&curret_file_open,this);
     file_form->show();
+    }
+}
+
+
+void MainWindow::on_action_7_triggered()
+{
+    if(!fullscreeen)
+    {
+
+        this->showFullScreen();
+        fullscreeen=true;
+        ui->action_7->setChecked(fullscreeen);
+    }
+    else
+    {
+        this->showNormal();
+        fullscreeen = false;
+        ui->action_7->setChecked(fullscreeen);
     }
 }
 
