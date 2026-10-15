@@ -101,6 +101,10 @@
    </property>
   </action>
   <action name="action_2">
+   <property name="icon">
+    <iconset resource="rec.qrc">
+     <normaloff>:/icons/settings.webp</normaloff>:/icons/settings.webp</iconset>
+   </property>
    <property name="text">
     <string>Параметры</string>
    </property>

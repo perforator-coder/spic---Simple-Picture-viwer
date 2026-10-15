@@ -6,7 +6,11 @@ File_info::File_info(QFileInfo *file,QWidget *parent)
     , ui(new Ui::File_info)
 {
     ui->setupUi(this);
-    File_obj = file;
+    this->setWindowIcon(QIcon(":/icons/info_icon.webp"));
+    this->setWindowTitle("Об файле");
+    if(file != NULL){
+        File_obj = file;
+    }
 }
 
 File_info::~File_info()

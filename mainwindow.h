@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QString patch,QWidget *parent = nullptr);
     ~MainWindow() override;
-    QVector<QString> shortcats = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e"};
+    QVector<QString> shortcats = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e","Ctrl+i"};
     bool menubar_hide = false;
     bool Strach_picture = false;
     bool Strach_witch_extending = false;

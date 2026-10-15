@@ -238,6 +238,10 @@ void MainWindow::Shortcat()
         }
         resize_pic();
     });
+    QShortcut *shortcat_info_pic = new QShortcut(QKeySequence(shortcats[5]),this);
+    connect(shortcat_info_pic,&QShortcut::activated,this,[this](){
+        on_action_5_triggered();
+    });
 }
 
 void MainWindow::on_action_triggered()
@@ -375,7 +379,9 @@ void MainWindow::on_action_4_triggered()
 
 void MainWindow::on_action_5_triggered()
 {
+    if(open_file){
     File_info *file_form = new File_info(&curret_file_open,this);
     file_form->show();
+    }
 }
 
