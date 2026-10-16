@@ -2,3 +2,4 @@
 #include "EWIEGA46WW/moc_file_info.cpp"
 #include "EWIEGA46WW/moc_info_window.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
+#include "EWIEGA46WW/moc_settings.cpp"

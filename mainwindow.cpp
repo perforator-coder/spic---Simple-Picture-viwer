@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "info_window.h"
 #include "file_info.h"
+#include "settings.h"
 
 #include <QKeySequence>
 #include <QShortcut>
@@ -413,5 +414,13 @@ void MainWindow::on_action_7_triggered()
         fullscreeen = false;
         ui->action_7->setChecked(fullscreeen);
     }
+}
+
+
+void MainWindow::on_action_2_triggered()
+{
+    settings *seting_form = new settings(this,&shortcats);
+    seting_form->show();
+    //Shortcat();
 }
 
