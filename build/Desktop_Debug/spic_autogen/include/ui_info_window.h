@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'info_window.ui'
 **
-** Created by: Qt User Interface Compiler version 6.11.2
+** Created by: Qt User Interface Compiler version 6.12.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -23,9 +23,10 @@ class Ui_Info_window
 {
 public:
     QGridLayout *gridLayout;
-    QLabel *label;
-    QTextEdit *textEdit;
     QPushButton *pushButton;
+    QTextEdit *textEdit;
+    QLabel *label;
+    QLabel *label_2;
 
     void setupUi(QWidget *Info_window)
     {
@@ -41,23 +42,29 @@ public:
         Info_window->setMaximumSize(QSize(400, 330));
         gridLayout = new QGridLayout(Info_window);
         gridLayout->setObjectName("gridLayout");
-        label = new QLabel(Info_window);
-        label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8(""));
+        pushButton = new QPushButton(Info_window);
+        pushButton->setObjectName("pushButton");
 
-        gridLayout->addWidget(label, 0, 0, 1, 1, Qt::AlignmentFlag::AlignHCenter);
+        gridLayout->addWidget(pushButton, 4, 0, 1, 1, Qt::AlignmentFlag::AlignHCenter);
 
         textEdit = new QTextEdit(Info_window);
         textEdit->setObjectName("textEdit");
         textEdit->setStyleSheet(QString::fromUtf8(""));
         textEdit->setReadOnly(true);
 
-        gridLayout->addWidget(textEdit, 1, 0, 1, 1);
+        gridLayout->addWidget(textEdit, 2, 0, 1, 1);
 
-        pushButton = new QPushButton(Info_window);
-        pushButton->setObjectName("pushButton");
+        label = new QLabel(Info_window);
+        label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8(""));
 
-        gridLayout->addWidget(pushButton, 2, 0, 1, 1, Qt::AlignmentFlag::AlignHCenter);
+        gridLayout->addWidget(label, 0, 0, 1, 1, Qt::AlignmentFlag::AlignHCenter);
+
+        label_2 = new QLabel(Info_window);
+        label_2->setObjectName("label_2");
+        label_2->setStyleSheet(QString::fromUtf8("font: 700 10pt \"DejaVu Sans Condensed\";"));
+
+        gridLayout->addWidget(label_2, 1, 0, 1, 1, Qt::AlignmentFlag::AlignHCenter);
 
 
         retranslateUi(Info_window);
@@ -68,7 +75,7 @@ public:
     void retranslateUi(QWidget *Info_window)
     {
         Info_window->setWindowTitle(QCoreApplication::translate("Info_window", "Form", nullptr));
-        label->setText(QCoreApplication::translate("Info_window", "pic", nullptr));
+        pushButton->setText(QCoreApplication::translate("Info_window", "Github", nullptr));
         textEdit->setHtml(QCoreApplication::translate("Info_window", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -86,7 +93,8 @@ public:
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-ind"
                         "ent:0px;\"><br /></p></body></html>", nullptr));
-        pushButton->setText(QCoreApplication::translate("Info_window", "Github", nullptr));
+        label->setText(QCoreApplication::translate("Info_window", "pic", nullptr));
+        label_2->setText(QCoreApplication::translate("Info_window", "V: 0.0.1", nullptr));
     } // retranslateUi
 
 };

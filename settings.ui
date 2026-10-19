@@ -7,12 +7,168 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>268</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Dialog</string>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>268</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>268</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Параметры</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Скрытие панели:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_menu">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Открытие файла:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_open">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Закрытие программы:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_close">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Растягивание под окно:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_resize">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Блокировка изменения:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_bloc">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_file_info">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Об файле:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Полный экран:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_full">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QKeySequenceEdit" name="keySequenceEdit_settings">
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSequenceLength">
+      <longLong>1</longLong>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Настройки:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

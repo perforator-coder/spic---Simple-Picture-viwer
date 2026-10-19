@@ -180,7 +180,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::Shortcat()
 {
-    QShortcut *shorcat_menubar = new QShortcut(QKeySequence(shortcats[0]),this);
+    shorcat_menubar = new QShortcut(QKeySequence(shortcats[0]),this);
 
     connect(shorcat_menubar,&QShortcut::activated,this,[this](){
 
@@ -197,15 +197,15 @@ void MainWindow::Shortcat()
         }
         resize_pic();
     });
-    QShortcut *shortcat_open_file = new QShortcut(QKeySequence(shortcats[1]),this);
+    shortcat_open_file = new QShortcut(QKeySequence(shortcats[1]),this);
     connect(shortcat_open_file,&QShortcut::activated,this,[this](){
         on_action_triggered();
     });
-    QShortcut *shortcat_close_app = new QShortcut(QKeySequence(shortcats[2]),this);
+    shortcat_close_app = new QShortcut(QKeySequence(shortcats[2]),this);
     connect(shortcat_close_app,&QShortcut::activated,this,[this](){
         on_action_3_triggered();
     });
-    QShortcut *shortcat_modekeepaspect = new QShortcut(QKeySequence(shortcats[3]),this);
+    shortcat_modekeepaspect = new QShortcut(QKeySequence(shortcats[3]),this);
     connect(shortcat_modekeepaspect,&QShortcut::activated,this,[this](){
         if(!Strach_witch_extending){
         if(!Strach_picture)
@@ -224,7 +224,7 @@ void MainWindow::Shortcat()
         resize_pic();
         }
     });
-    QShortcut *shortcat_modebyextending = new QShortcut(QKeySequence(shortcats[4]),this);
+    shortcat_modebyextending = new QShortcut(QKeySequence(shortcats[4]),this);
     connect(shortcat_modebyextending,&QShortcut::activated,this,[this](){
         if(!Strach_witch_extending)
         {
@@ -247,16 +247,23 @@ void MainWindow::Shortcat()
         }
         resize_pic();
     });
-    QShortcut *shortcat_info_pic = new QShortcut(QKeySequence(shortcats[5]),this);
+    shortcat_info_pic = new QShortcut(QKeySequence(shortcats[5]),this);
     connect(shortcat_info_pic,&QShortcut::activated,this,[this](){
         on_action_5_triggered();
     });
-    QShortcut*shortcat_fillscrin = new QShortcut(QKeySequence(shortcats[6]),this);
+    shortcat_fillscrin = new QShortcut(QKeySequence(shortcats[6]),this);
     connect(shortcat_fillscrin,&QShortcut::activated,this,[this](){
         on_action_7_triggered();
     });
+    shortcat_settings =  new QShortcut(QKeySequence(shortcats[7]),this);
+    connect(shortcat_settings,&QShortcut::activated,this,[this](){
+        on_action_2_triggered();
+    });
 }
-
+void MainWindow::shortcat_reset()
+{
+    shorcat_menubar->setKey(shortcats[0]);
+}
 void MainWindow::on_action_triggered()
 {
     QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;Все подерживаемые расшириения (*.png *.jpeg *.jpg *.gif *.webp *.kra);;png файлы (*.png);;jpeg файлы (*.jpeg *.jpg);;gif файлы (*.gif);;Webp файлы (*.webp);; Krita Файлы (*.kra)");
@@ -420,7 +427,8 @@ void MainWindow::on_action_7_triggered()
 void MainWindow::on_action_2_triggered()
 {
     settings *seting_form = new settings(this,&shortcats);
-    seting_form->show();
-    //Shortcat();
+    seting_form->exec();
+    shortcats = *(seting_form->get_shorcats());
+    shortcat_reset();
 }
 

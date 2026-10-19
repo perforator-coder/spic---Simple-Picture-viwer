@@ -5,6 +5,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QLabel>
+#include <qshortcut.h>
+#include <QShortcut>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -18,7 +20,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QString patch,QWidget *parent = nullptr);
     ~MainWindow() override;
-    QVector<QString> shortcats = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e","Ctrl+i","F11"};
+    QVector<QString> shortcats  = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e","Ctrl+i","F11","Ctrl+s"};
     bool menubar_hide = false;
     bool Strach_picture = false;
     bool Strach_witch_extending = false;
@@ -37,7 +39,7 @@ private slots:
     void save_json();
     void load_json();
 
-
+    void shortcat_reset();
 
     void on_action_4_triggered();
 
@@ -64,6 +66,14 @@ private:
     QString save_dir;
     const double zoom = 1.1;
     bool fullscreeen = false;
-
+    //шорткаты
+    QShortcut *shorcat_menubar;
+    QShortcut *shortcat_open_file;
+    QShortcut *shortcat_close_app;
+    QShortcut *shortcat_modekeepaspect;
+    QShortcut *shortcat_modebyextending;
+    QShortcut *shortcat_info_pic;
+    QShortcut *shortcat_fillscrin;
+    QShortcut *shortcat_settings;
 };
 #endif // MAINWINDOW_H

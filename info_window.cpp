@@ -16,6 +16,7 @@ Info_window::Info_window(QWidget *parent)
     QIcon logo(":/icons/icon.webp");
     QPixmap pic = logo.pixmap(64,64);
     ui->label->setPixmap(pic);
+    ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 Info_window::~Info_window()
