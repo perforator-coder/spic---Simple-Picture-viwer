@@ -40,49 +40,49 @@ void settings::on_keySequenceEdit_menu_editingFinished()
 
 void settings::on_keySequenceEdit_open_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_open->keySequence();
     shortcat_list->replace( 1,new_key.toString(QKeySequence::PortableText));
 }
 
 
 void settings::on_keySequenceEdit_close_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_close->keySequence();
     shortcat_list->replace( 2,new_key.toString(QKeySequence::PortableText));
 }
 
 
 void settings::on_keySequenceEdit_resize_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_resize->keySequence();
     shortcat_list->replace( 3,new_key.toString(QKeySequence::PortableText));
 }
 
 
 void settings::on_keySequenceEdit_bloc_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_bloc->keySequence();
     shortcat_list->replace( 4,new_key.toString(QKeySequence::PortableText));
 }
 
 
 void settings::on_keySequenceEdit_file_info_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_file_info->keySequence();
     shortcat_list->replace( 5,new_key.toString(QKeySequence::PortableText));
 }
 
 
 void settings::on_keySequenceEdit_full_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_full->keySequence();
     shortcat_list->replace( 6,new_key.toString(QKeySequence::PortableText));
 }
 
 
 void settings::on_keySequenceEdit_settings_editingFinished()
 {
-    QKeySequence new_key = ui->keySequenceEdit_menu->keySequence();
+    QKeySequence new_key = ui->keySequenceEdit_settings->keySequence();
     shortcat_list->replace( 7,new_key.toString(QKeySequence::PortableText));
 }
 

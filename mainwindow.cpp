@@ -263,6 +263,15 @@ void MainWindow::Shortcat()
 void MainWindow::shortcat_reset()
 {
     shorcat_menubar->setKey(shortcats[0]);
+
+    shortcat_open_file->setKey(shortcats[1]);
+    shortcat_close_app->setKey(shortcats[2]);
+    shortcat_modekeepaspect->setKey(shortcats[3]);
+    shortcat_modebyextending->setKey(shortcats[4]);
+    shortcat_info_pic->setKey(shortcats[5]);
+    shortcat_fillscrin->setKey(shortcats[6]);
+    shortcat_settings->setKey(shortcats[7]);
+    update();
 }
 void MainWindow::on_action_triggered()
 {
