@@ -186,15 +186,19 @@ void MainWindow::Shortcat()
 
         if(!menubar_hide){
             ui->menubar->hide();
+            this->setWindowFlag(Qt::FramelessWindowHint,true);
             menubar_hide = true;
 
         }
         else
         {
             ui->menubar->show();
+            this->setWindowFlag(Qt::FramelessWindowHint,false);
+
             menubar_hide = false;
 
         }
+        this->show();
         resize_pic();
     });
     shortcat_open_file = new QShortcut(QKeySequence(shortcats[1]),this);
