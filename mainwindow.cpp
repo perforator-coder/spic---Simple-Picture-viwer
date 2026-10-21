@@ -17,6 +17,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QCloseEvent>
+#include <QMimeData>
 
 MainWindow::MainWindow(QString patch,QWidget *parent)
     : QMainWindow(parent)
@@ -29,6 +30,10 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     this->setWindowIcon(QIcon(":/icons/icon.webp"));
     Shortcat();
     this->setWindowTitle("Spic");
+    ui->picture->setAcceptDrops(false);
+    ui->picture->viewport()->setAcceptDrops(false);
+    this->setAcceptDrops(true);
+    this->installEventFilter(this);
     ui->picture->setAlignment(Qt::AlignCenter);
     ui->picture->setScene(pic_conteiner);
     ui->picture->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -45,6 +50,33 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+    if(event->mimeData()->hasUrls())
+    {
+        event->acceptProposedAction();
+    }
+    else
+    {
+        event->ignore();
+    }
+}
+void MainWindow::dropEvent(QDropEvent *event)
+{
+    if(event->mimeData()->hasUrls())
+    {
+        QList<QUrl> patch = event->mimeData()->urls();
+        if(patch.count() == 1)
+        {
+            QString file = patch[0].toLocalFile();
+            curret_file_open = QFileInfo(file);
+            load_file(true);
+        }
+        else{
+
+        }
+    }
+}
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     save_json();
@@ -56,10 +88,12 @@ void MainWindow::set_value()
     if(menubar_hide)
     {
         ui->menubar->hide();
+        this->setWindowFlag(Qt::FramelessWindowHint,true);
     }
     else
     {
         ui->menubar->show();
+        this->setWindowFlag(Qt::FramelessWindowHint,false);
     }
     if(fullscreeen)
     {
@@ -187,6 +221,7 @@ void MainWindow::Shortcat()
         if(!menubar_hide){
             ui->menubar->hide();
             this->setWindowFlag(Qt::FramelessWindowHint,true);
+
             menubar_hide = true;
 
         }
@@ -277,9 +312,15 @@ void MainWindow::shortcat_reset()
     shortcat_settings->setKey(shortcats[7]);
     update();
 }
-void MainWindow::on_action_triggered()
+void MainWindow::load_file(bool patch_is_here )
 {
-    QString file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;Все подерживаемые расшириения (*.png *.jpeg *.jpg *.gif *.webp *.kra);;png файлы (*.png);;jpeg файлы (*.jpeg *.jpg);;gif файлы (*.gif);;Webp файлы (*.webp);; Krita Файлы (*.kra)");
+    QString file_path;
+    if(patch_is_here){
+        file_path = curret_file_open.filePath();
+    }else
+    {
+        file_path = QFileDialog::getOpenFileName(this,"Открыть изображение",QDir::homePath(),"Все расширения (*.*);;Все подерживаемые расшириения (*.png *.jpeg *.jpg *.gif *.webp *.kra);;png файлы (*.png);;jpeg файлы (*.jpeg *.jpg);;gif файлы (*.gif);;Webp файлы (*.webp);; Krita Файлы (*.kra)");
+    }
     if(file_path == nullptr)
     {
         open_file = false;
@@ -288,51 +329,51 @@ void MainWindow::on_action_triggered()
     QFileInfo file(file_path);
     if(valid_files.contains(file.suffix().toLower())){
         if(file_path.endsWith(".gif")||file_path.endsWith(".webp"))
-    {
+        {
 
-        is_animated = true;
+            is_animated = true;
 
-    }
-    else
-    {
+        }
+        else
+        {
 
-        is_animated = false;
-    }
+            is_animated = false;
+        }
 
-    pic_conteiner->clear();
-    delete pic_conteiner;
-    pic_conteiner = new  QGraphicsScene(this);
-    ui->picture->setScene(pic_conteiner);
-
-
-    if(is_animated == false){
-
-        file_pic_open = new QGraphicsPixmapItem();
-        file_pic_open->setPixmap(QPixmap(file_path));
-        size_open_picture = QPixmap(file_path).size();
-        pic_conteiner->addItem(file_pic_open);
-
-    }
-    else
-    {
-        animated_pic = new QMovie(file_path);
+        pic_conteiner->clear();
+        delete pic_conteiner;
+        pic_conteiner = new  QGraphicsScene(this);
+        ui->picture->setScene(pic_conteiner);
 
 
-        pic_animated = new QLabel;
-        pic_animated->setMovie(animated_pic);
-        pic_animated->setAttribute(Qt::WA_NoSystemBackground);
-        pic_conteiner->addWidget(pic_animated);
+        if(is_animated == false){
 
-        QTimer::singleShot(0,this,&MainWindow::resize_pic);
-        animated_pic->start();
-        animated_pic->jumpToFrame(0);
-        size_open_picture = animated_pic->frameRect().size();
+            file_pic_open = new QGraphicsPixmapItem();
+            file_pic_open->setPixmap(QPixmap(file_path));
+            size_open_picture = QPixmap(file_path).size();
+            pic_conteiner->addItem(file_pic_open);
 
-    }
-    resize_pic();
-    curret_file_open = QFileInfo(file_path);
-    this->setWindowTitle(QString("%1 -- %2 X %3").arg(curret_file_open.fileName()).arg(size_open_picture.height()).arg(size_open_picture.width()));
-    open_file = true;
+        }
+        else
+        {
+            animated_pic = new QMovie(file_path);
+
+
+            pic_animated = new QLabel;
+            pic_animated->setMovie(animated_pic);
+            pic_animated->setAttribute(Qt::WA_NoSystemBackground);
+            pic_conteiner->addWidget(pic_animated);
+
+            QTimer::singleShot(0,this,&MainWindow::resize_pic);
+            animated_pic->start();
+            animated_pic->jumpToFrame(0);
+            size_open_picture = animated_pic->frameRect().size();
+
+        }
+        resize_pic();
+        curret_file_open = QFileInfo(file_path);
+        this->setWindowTitle(QString("%1 -- %2 X %3").arg(curret_file_open.fileName()).arg(size_open_picture.height()).arg(size_open_picture.width()));
+        open_file = true;
     }
     else
     {
@@ -347,6 +388,11 @@ void MainWindow::on_action_triggered()
     {
         ui->action_5->setEnabled(open_file);
     }
+}
+void MainWindow::on_action_triggered()
+{
+
+    load_file(false);
 }
 
 

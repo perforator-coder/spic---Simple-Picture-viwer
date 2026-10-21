@@ -48,11 +48,14 @@ private slots:
     void on_action_7_triggered();
 
     void on_action_2_triggered();
+    void load_file(bool patch_is_here);
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void closeEvent(QCloseEvent *event) override;
     bool eventFilter(QObject *obj,QEvent *event) override;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
 private:
     Ui::MainWindow *ui;
     bool is_animated = false; 
