@@ -25,7 +25,12 @@ int main(int argc, char *argv[])
             break;
         }
     }
-
+    QString file_path;
+    if(argc > 1)
+    {
+        file_path = argv[1];
+        qDebug() << "Найден параметр" << argv[1];
+    }
     // Сохраняем файлы в папку в зависимости от ОС
     const QString using_os = QSysInfo::kernelType();
     qDebug() <<"Current user's kernel --" <<using_os;
@@ -60,11 +65,19 @@ int main(int argc, char *argv[])
     {
         dir_json.mkdir(save_place);
     };
-    MainWindow w(save_place);
+    MainWindow *w;
+    if(!file_path.isNull()){
+
+        w = new MainWindow(save_place,file_path);
+
+    }
+    else
+    {
+        w = new MainWindow(save_place,nullptr);
+    }
 
 
-
-    w.show();
+    w->show();
 
     return QApplication::exec();
 }

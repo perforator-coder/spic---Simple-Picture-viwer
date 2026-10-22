@@ -20,7 +20,7 @@
 #include <QMimeData>
 #include <QWindow>
 
-MainWindow::MainWindow(QString patch,QWidget *parent)
+MainWindow::MainWindow(QString patch,QString file_start_open,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -30,6 +30,7 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     load_json();
     set_value();
     Shortcat();
+
     //устанавливаем флаги
     this->setWindowIcon(QIcon(":/icons/icon.webp"));
     this->setWindowTitle("Spic");
@@ -46,7 +47,16 @@ MainWindow::MainWindow(QString patch,QWidget *parent)
     {
         ui->action_5->setEnabled(false);
     }
+    // проверяем открываем мы ли файл в начале или нет
+    if(file_start_open != nullptr)
+    {
+        curret_file_open = QFileInfo(file_start_open);
+        load_file(true);
+    }
+    else
+    {
 
+    }
 }
 
 MainWindow::~MainWindow()

@@ -18,13 +18,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QString patch,QWidget *parent = nullptr);
+    explicit MainWindow(QString patch,QString file_start_open,QWidget *parent = nullptr);
     ~MainWindow() override;
     QVector<QString> shortcats  = {"Ctrl+z","Ctrl+x","Ctrl+c","Ctrl+q","Ctrl+e","Ctrl+i","F11","Ctrl+s"};
     bool menubar_hide = false;
     bool Strach_picture = false;
     bool Strach_witch_extending = false;
     bool open_file = false;
+    QFileInfo curret_file_open;
 private slots:
     void Shortcat();
     void on_action_triggered();
@@ -61,7 +62,7 @@ private:
     Ui::MainWindow *ui;
     bool is_animated = false; 
     QMovie* animated_pic;
-    QFileInfo curret_file_open;
+
     QSize size_open_picture;
     QGraphicsScene *pic_conteiner = new QGraphicsScene(this);
     QGraphicsPixmapItem *file_pic_open = new QGraphicsPixmapItem();
