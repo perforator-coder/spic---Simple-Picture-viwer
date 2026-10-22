@@ -81,7 +81,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string notr="true">font: 700 10pt &quot;DejaVu Sans Condensed&quot;;</string>
      </property>
      <property name="text">
-      <string>V: 0.0.1</string>
+      <string>V: 0.0.2 Git</string>
      </property>
     </widget>
    </item>
