@@ -126,7 +126,7 @@
     <iconset theme="QIcon::ThemeIcon::SystemLockScreen"/>
    </property>
    <property name="text">
-    <string>Отключить подгонку под окно</string>
+    <string>Режим лупы</string>
    </property>
   </action>
   <action name="action_5">

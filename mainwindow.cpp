@@ -18,17 +18,20 @@
 #include <QJsonArray>
 #include <QCloseEvent>
 #include <QMimeData>
+#include <QWindow>
 
 MainWindow::MainWindow(QString patch,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //Загрузка json
     save_dir = patch;
     load_json();
     set_value();
-    this->setWindowIcon(QIcon(":/icons/icon.webp"));
     Shortcat();
+    //устанавливаем флаги
+    this->setWindowIcon(QIcon(":/icons/icon.webp"));
     this->setWindowTitle("Spic");
     ui->picture->setAcceptDrops(false);
     ui->picture->viewport()->setAcceptDrops(false);
@@ -52,6 +55,7 @@ MainWindow::~MainWindow()
 }
 void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 {
+    //срабатывает когда наводим курсор с файлом
     if(event->mimeData()->hasUrls())
     {
         event->acceptProposedAction();
@@ -63,6 +67,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 }
 void MainWindow::dropEvent(QDropEvent *event)
 {
+    //После скинутого файла проверяем это 1 файл или несколько
     if(event->mimeData()->hasUrls())
     {
         QList<QUrl> patch = event->mimeData()->urls();
@@ -73,18 +78,31 @@ void MainWindow::dropEvent(QDropEvent *event)
             load_file(true);
         }
         else{
-
+            //приложение подерживает 1 фото
+            QMessageBox::warning(this,"Ошибка drag and drop","drag and drop работает только с 1 файлом");
         }
     }
 }
 void MainWindow::closeEvent(QCloseEvent *event)
 {
+    //переопределяем закрытие для сохранения json
     save_json();
     event->accept();
 }
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    //перепределенный метод перетаскивания окна
+    // нужно для скрытых рамок
+    if(event->button() == Qt::LeftButton)
+    {
+        this->windowHandle()->startSystemMove();
+        event->accept();
+
+    }
+}
 void MainWindow::set_value()
 {
-
+    // после установленых флагов проверяем и выполняем методы которые с ними связаны
     if(menubar_hide)
     {
         ui->menubar->hide();
@@ -108,18 +126,21 @@ void MainWindow::set_value()
 
         ui->action_7->setChecked(fullscreeen);
     }
+
 }
 void MainWindow::save_json()
 {
-
+    //Сохранение json
     QJsonObject json_data;
     QJsonArray array;
     json_data["hide_menubar"] = menubar_hide;
+    json_data["fullscreen"] = fullscreeen;
+
     foreach (const QString &shortcat, shortcats) {
         array.append(shortcat);
     }
     json_data["shortcats"] = array;
-    json_data["fullscreen"] = fullscreeen;
+
     QJsonDocument done_json_file(json_data);
     QFile json_file(save_dir+"/Spic.json");
 
@@ -133,6 +154,7 @@ void MainWindow::save_json()
 }
 bool MainWindow::eventFilter(QObject *obj,QEvent *event)
 {
+    //метод для зумма
     if(Strach_witch_extending){
     if(obj == ui->picture->viewport() && event->type() == QEvent::Wheel)
     {
@@ -152,6 +174,7 @@ bool MainWindow::eventFilter(QObject *obj,QEvent *event)
 }
 void MainWindow::load_json()
 {
+    //Загрузка json
     if(QFile::exists(save_dir+"/Spic.json"))
     {
         QJsonDocument data_convertor;
@@ -171,7 +194,7 @@ void MainWindow::load_json()
             data_convertor = QJsonDocument::fromJson(data,&detector_er);
             if(detector_er.error != QJsonParseError::NoError)
             {
-                //ошибка если файл битый
+                QMessageBox::warning(this,"Ошибка чтения Json","Файл битый\nЗагрузка стандартныйх значений");
 
             }
             else
@@ -181,6 +204,7 @@ void MainWindow::load_json()
                     json_obj = data_convertor.object();
                     menubar_hide = json_obj["hide_menubar"].toBool();
                     fullscreeen = json_obj["fullscreen"].toBool();
+
                     shortcats.clear();
                     QJsonArray array = json_obj["shortcats"].toArray();
                     foreach (const QJsonValue &i, array) {
@@ -193,6 +217,7 @@ void MainWindow::load_json()
 }
 void MainWindow::resize_pic()
 {
+    //метод для растягивания картинки под окно
     if(!Strach_witch_extending){
      if(pic_conteiner && Strach_picture )
     {
@@ -208,12 +233,14 @@ void MainWindow::resize_pic()
 }
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
+    //переопределяем метод
     QMainWindow::resizeEvent(event);
     resize_pic();
 }
 
 void MainWindow::Shortcat()
 {
+    // загрузка и связывание комбинаций с методами
     shorcat_menubar = new QShortcut(QKeySequence(shortcats[0]),this);
 
     connect(shorcat_menubar,&QShortcut::activated,this,[this](){
@@ -301,6 +328,7 @@ void MainWindow::Shortcat()
 }
 void MainWindow::shortcat_reset()
 {
+    //перезапись комбинаций после изменений
     shorcat_menubar->setKey(shortcats[0]);
 
     shortcat_open_file->setKey(shortcats[1]);
@@ -314,6 +342,8 @@ void MainWindow::shortcat_reset()
 }
 void MainWindow::load_file(bool patch_is_here )
 {
+    ///Метод для загрузки
+    /// если patch_is_hear true - читает curret_file_open (QFileInfo)
     QString file_path;
     if(patch_is_here){
         file_path = curret_file_open.filePath();
@@ -391,19 +421,21 @@ void MainWindow::load_file(bool patch_is_here )
 }
 void MainWindow::on_action_triggered()
 {
-
+    //кнопка загрузки
     load_file(false);
 }
 
 
 void MainWindow::on_action_3_triggered()
 {
+    //кнопка закрытия
     this->close();
 }
 
 
 void MainWindow::on_action_about_triggered()
 {
+    //показ сведений об приложении
     auto *Info_window = new class Info_window(this);
     Info_window->setAttribute(Qt::WA_DeleteOnClose);
     Info_window->show();
@@ -412,6 +444,7 @@ void MainWindow::on_action_about_triggered()
 
 void MainWindow::on_action_6_triggered()
 {
+    //кнопка маштобирования
     if(!Strach_picture)
     {
         Strach_picture = true;
@@ -435,6 +468,7 @@ void MainWindow::on_action_6_triggered()
 
 void MainWindow::on_action_4_triggered()
 {
+    // кнопка зум
     if(!Strach_witch_extending){
         ui->action_6->setEnabled(false);
         Strach_witch_extending = true;
@@ -458,6 +492,7 @@ void MainWindow::on_action_4_triggered()
 
 void MainWindow::on_action_5_triggered()
 {
+    //кнопка об файле
     if(open_file){
     File_info *file_form = new File_info(&curret_file_open,this);
     file_form->show();
@@ -467,6 +502,7 @@ void MainWindow::on_action_5_triggered()
 
 void MainWindow::on_action_7_triggered()
 {
+    //кнопка полногоокна
     if(!fullscreeen)
     {
 
@@ -485,6 +521,7 @@ void MainWindow::on_action_7_triggered()
 
 void MainWindow::on_action_2_triggered()
 {
+    //кнопка настроек
     settings *seting_form = new settings(this,&shortcats);
     seting_form->exec();
     shortcats = *(seting_form->get_shorcats());

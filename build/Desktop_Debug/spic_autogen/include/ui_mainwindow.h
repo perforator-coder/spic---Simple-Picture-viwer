@@ -141,7 +141,7 @@ public:
         action_about->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\320\270", nullptr));
         action_2->setText(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213", nullptr));
         action_6->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\202\321\217\320\263\320\270\320\262\320\260\321\202\321\214 \320\272\320\260\321\200\321\202\320\270\320\275\320\272\321\203", nullptr));
-        action_4->setText(QCoreApplication::translate("MainWindow", "\320\236\321\202\320\272\320\273\321\216\321\207\320\270\321\202\321\214 \320\277\320\276\320\264\320\263\320\276\320\275\320\272\321\203 \320\277\320\276\320\264 \320\276\320\272\320\275\320\276", nullptr));
+        action_4->setText(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\266\320\270\320\274 \320\273\321\203\320\277\321\213", nullptr));
         action_5->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \321\204\320\260\320\271\320\273\320\265", nullptr));
         action_7->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260 \320\262\320\265\321\201\321\214 \321\215\320\272\321\200\320\260\320\275", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", nullptr));
