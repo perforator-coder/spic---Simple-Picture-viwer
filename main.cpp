@@ -10,6 +10,7 @@
 #include <QJsonArray>
 #include <QDir>
 #include <QJsonDocument>
+#include <QStandardPaths>
 
 int main(int argc, char *argv[])
 {
@@ -40,7 +41,9 @@ int main(int argc, char *argv[])
 
     if (using_os == "windows")
     {
-
+        QCoreApplication::setOrganizationName("perforator-coder");
+        QCoreApplication::setApplicationName("spic");
+        save_place = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
     }
     else if (using_os == "osx")
     {
