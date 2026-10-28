@@ -6,4 +6,4 @@ Comment=Просмотр фото
 Exec=/usr/bin/Spic
 Icon=Spic
 Terminal=false
-Categories=Utility;
+Categories=Graphics;Viewer;

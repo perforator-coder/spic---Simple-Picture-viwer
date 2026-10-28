@@ -1,11 +1,13 @@
 
 pkgname=spic
-pkgver=r30.614687c
+pkgver=r31.065e918
 pkgrel=1
 pkgdesc="Просмоторщик фото"
 arch=('x86_64')
 url="https://github.com/perforator-coder/spic---Simple-Picture-viwer"
 license=('GPL')
+
+
 
 # Зависимости, необходимые для работы приложения в Arch
 # Укажите qt6-base (для Qt6) или qt5-base (для Qt5)
