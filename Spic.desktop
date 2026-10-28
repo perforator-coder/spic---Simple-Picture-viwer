@@ -4,6 +4,6 @@ Type=Application
 Name=Spic 
 Comment=Просмотр фото
 Exec=/usr/bin/spic
-Icon=spic
+Icon=Spic
 Terminal=false
 Categories=Utility;
