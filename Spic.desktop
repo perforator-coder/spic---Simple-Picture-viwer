@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spic 
+Comment=Просмотр фото
+Exec=/usr/bin/spic
+Icon=spic
+Terminal=false
+Categories=Utility;

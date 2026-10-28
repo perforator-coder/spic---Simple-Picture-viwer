@@ -5,6 +5,9 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools )
 
 qt_standard_project_setup()
 set(CMAKE_AUTORCC ON)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+
 qt_add_executable(spic
     WIN32 MACOSX_BUNDLE
     main.cpp
